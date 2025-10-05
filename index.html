@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Michelle Chen | Pre-Sales & Cloud Solution Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --primary: #581CA0;
+    --primary-light: #8B5CF6;
+    --primary-dark: #371C9C;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', '微软雅黑', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', sans-serif;
+    overflow-x: hidden;
+    transition: background 0.4s, color 0.4s;
+  }
+
+  body.en-mode { font-family: Calibri, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+  h1, h2, h3, h4, .hero-title-main, .section-title, .project-title, .timeline-company, .insight-title {
+    font-family: 'Microsoft YaHei', '微软雅黑', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'Source Han Sans CN', sans-serif;
+  }
+
+  body.en-mode h1, body.en-mode h2, body.en-mode h3, body.en-mode h4, body.en-mode .hero-title-main, body.en-mode .section-title, body.en-mode .project-title, body.en-mode .timeline-company, body.en-mode .insight-title {
+    font-family: Calibri, 'Segoe UI', 'Trebuchet MS', sans-serif;
+  }
+
+  .stat-number { font-family: 'Space Grotesk', Calibri, 'Segoe UI', monospace; }
+
+  /* --- THEME & GLASSMORPHISM STYLES --- */
+  body.light-theme {
+    --bg-main: #FDFBFF;
+    --bg-alt: #F8F7FF;
+    --text-primary: #1A1A1A;
+    --text-secondary: #555555;
+    --card-bg: rgba(255, 255, 255, 0.65);
+    --border-color: rgba(139, 92, 246, 0.15);
+    --icon-color: var(--primary-light);
+    background: #FDFBFF;
+    color: #1A1A1A;
+  }
+
+  body.dark-theme {
+    --bg-main: #0F0525;
+    --bg-alt: #1A0F3F;
+    --text-primary: #E9E6F5;
+    --text-secondary: #AAAAAA;
+    --card-bg: rgba(26, 15, 63, 0.55);
+    --border-color: rgba(139, 92, 246, 0.25);
+    --icon-color: #8B5CF6;
+    background: #0F0525;
+    color: #E9E6F5;
+  }
+  
+  body.dark-theme .skill-icon img,
+  body.dark-theme .timeline-icon img,
+  body.dark-theme .timeline-icon svg {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+  }
+  
+  body.dark-theme .timeline-item:hover .timeline-icon img,
+  body.dark-theme .timeline-item:hover .timeline-icon svg {
+    filter: none;
+    opacity: 1;
+  }
+
+
+  /* Glassmorphism Card Base Style */
+  .glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24px; /* 2xl */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px 0 rgba(139, 92, 246, 0.2);
+    border-color: var(--primary-light);
+  }
+
+  /* Navigation */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    padding: 1.5rem 6%;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s;
+    background: var(--card-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  }
+  nav.scrolled {
+    padding: 1rem 6%;
+    box-shadow: 0 4px 30px rgba(88, 28, 160, 0.1);
+  }
+  .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--primary), var(--primary-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; cursor: pointer; }
+  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--text-primary); font-weight: 500; position: relative; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--primary); }
+  .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, var(--primary), var(--primary-light)); transition: width 0.3s; }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-controls { display: flex; gap: 1rem; align-items: center; }
+  .theme-toggle, .lang-toggle { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--primary); background: transparent; color: var(--primary); font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+  .theme-toggle:hover, .lang-toggle:hover { background: var(--primary); color: white; }
+
+  /* Hero Section */
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 6% 4rem; background: var(--bg-main); }
+  .hero-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 420px; gap: 4rem; align-items: center; }
+  .hero-content { animation: fadeIn 0.8s 0.2s forwards; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-content h1 { font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 0.5rem; color: var(--text-primary); }
+  .gradient-text { background: linear-gradient(135deg, var(--primary), var(--primary-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-title-main { font-size: 4.5rem; }
+  .typewriter { display: inline-block; border-right: 4px solid var(--primary-light); white-space: nowrap; overflow: hidden; animation: typing 3.5s steps(30, end), blink .75s step-end infinite; }
+  @keyframes typing { from { width: 0 } to { width: 100% } }
+  @keyframes blink { from, to { border-color: transparent } 50% { border-color: var(--primary-light); } }
+  .hero-subtitle { font-size: 1.5rem; color: var(--primary); font-weight: 600; margin-bottom: 1.5rem; }
+  .hero-description { font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 600px; }
+  .hero-buttons { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .btn { padding: 1rem 2.5rem; border-radius: 999px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s; border: 2px solid transparent; }
+  .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3); }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5); }
+  .btn-ghost { border-color: var(--primary); color: var(--primary); }
+  .btn-ghost:hover { background: var(--primary); color: white; }
+  .hero-avatar { width: 420px; height: 420px; border-radius: 50%; overflow: hidden; border: 3px solid var(--border-color); box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2); display: flex; align-items: center; justify-content: center; animation: float 6s ease-in-out infinite; }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+  .hero-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Sections & Headers & Animations */
+  section { padding: 6rem 6%; }
+  .section-header, .skill-card, .project-card, .timeline-item, .insight-card, .about-image, .about-main {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.215, 0.610, 0.355, 1), transform 0.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+  .section-header.visible, .skill-card.visible, .project-card.visible, .timeline-item.visible, .insight-card.visible, .about-image.visible, .about-main.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .section-header { text-align: center; margin-bottom: 4rem; transition-delay: 0s; }
+  .section-title { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; }
+  .section-subtitle { font-size: 1.1rem; color: var(--text-secondary); }
+
+  /* --- About Section (Re-structured) --- */
+  .about { background: var(--bg-alt); }
+  .about-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 400px 1fr; gap: 4rem; align-items: start; }
+  .about-image { width: 100%; aspect-ratio: 1; border-radius: 24px; overflow: hidden; border: 3px solid var(--border-color); box-shadow: 0 25px 70px rgba(139, 92, 246, 0.15); }
+  .about-image img { width: 100%; height: 100%; object-fit: cover; }
+  .about-main { display: grid; grid-template-columns: 1fr 280px; gap: 2rem; align-items: start; }
+  .about-content { padding: 2rem; }
+  .about-text { font-size: 1.05rem; line-height: 1.9; color: var(--text-secondary); margin-bottom: 1.5rem; }
+  .tabs { display: flex; gap: 1rem; margin-top: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--border-color); }
+  .tab { padding: 0.8rem 0; margin-right: 1.5rem; background: transparent; border: none; color: var(--text-secondary); font-size: 1rem; font-weight: 600; cursor: pointer; position: relative; transition: color 0.3s; }
+  .tab.active { color: var(--primary-light); }
+  .tab.active::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--primary), var(--primary-light)); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; animation: contentFadeIn 0.5s; }
+  @keyframes contentFadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .education-item { margin-bottom: 1.5rem; }
+  .education-item:last-child { margin-bottom: 0; }
+  .education-item h4 { font-size: 1.2rem; color: var(--text-primary); margin-bottom: 0.3rem; }
+  .education-item .date { color: var(--primary-light); font-size: 0.9rem; margin-bottom: 0.5rem; display: block; }
+  .education-item p { color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; }
+  .stats { display: flex; flex-direction: column; gap: 1.5rem; }
+  .stat-card { padding: 2rem 1.5rem; text-align: center; }
+  .stat-number { font-size: 4rem; font-weight: 800; background: linear-gradient(135deg, #8B5CF6, #C084FC); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; line-height: 1; }
+  .stat-label { font-size: 1rem; color: var(--text-secondary); font-weight: 500; }
+
+  /* Skills Section */
+  .skills { background: var(--bg-main); }
+  .skills-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5rem; }
+  .skill-card { padding: 2rem 1rem; text-align: center; }
+  .skill-icon { width: 64px; height: 64px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+  .skill-icon img, .skill-icon svg { height: 48px; width: 48px; }
+  .skill-card:hover .skill-icon { transform: scale(1.15) rotate(10deg); }
+  .skill-name { font-weight: 700; color: var(--text-primary); margin-bottom: 0.3rem; }
+  .skill-category { font-size: 0.85rem; color: var(--text-secondary); }
+
+  /* Projects Section */
+  .projects { background: var(--bg-alt); }
+  .project-filters { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
+  .filter-btn { padding: 0.8rem 2rem; background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 999px; color: var(--text-secondary); font-weight: 600; cursor: pointer; transition: all 0.3s; }
+  .filter-btn.active, .filter-btn:hover { background: var(--primary); border-color: var(--primary); color: white; box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4); }
+  .projects-grid { max-width: 1400px; margin: 0 auto; display: grid; gap: 3rem; }
+  .project-card { display: grid; grid-template-columns: 450px 1fr; overflow: hidden; min-height: 350px; }
+  .project-image { width: 100%; height: 100%; overflow: hidden; position: relative; }
+  .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+  .project-card:hover .project-image img { transform: scale(1.05); }
+  .project-content { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+  .project-title { font-size: 1.9rem; font-weight: 800; margin-bottom: 1.2rem; color: var(--text-primary); line-height: 1.3; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.3rem; }
+  .tag { padding: 0.5rem 1.2rem; background: rgba(139, 92, 246, 0.12); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 999px; font-size: 0.85rem; color: var(--primary-light); font-weight: 500; }
+  .project-description { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.8rem; font-size: 1.02rem; }
+  .project-links { display: flex; gap: 1rem; }
+  .project-link { padding: 0.8rem 1.8rem; border: 2px solid var(--primary); border-radius: 999px; color: var(--primary-light); text-decoration: none; font-weight: 600; transition: all 0.3s; }
+  .project-link:hover { background: var(--primary); color: white; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4); }
+
+  /* Insights Section */
+  .insights { background: var(--bg-main); }
+  .insights-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+  .insight-card { padding: 3rem; }
+  .insight-title { font-size: 1.4rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1rem; line-height: 1.4; }
+  .insight-subtitle { font-size: 0.9rem; color: var(--primary); font-weight: 600; margin-bottom: 1.2rem; }
+  .insight-text { font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary); white-space: pre-line; }
+
+  /* Experience Section (Timeline Card Style) */
+  .experience { background: var(--bg-alt); }
+  .timeline { max-width: 1000px; margin: 0 auto; position: relative; }
+  .timeline::before { content: ''; position: absolute; left: 30px; top: 0; width: 2px; height: 100%; background: var(--border-color); }
+  .timeline-item { display: grid; grid-template-columns: 60px 1fr; gap: 2rem; align-items: start; margin-bottom: 2.5rem; position: relative; }
+  .timeline-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--bg-main); border: 2px solid var(--primary); display: grid; place-items: center; font-size: 1.5rem; margin: 8px auto 0; position: relative; z-index: 1; transition: all 0.3s; }
+  .timeline-icon img, .timeline-icon svg { height: 24px; fill: var(--icon-color); }
+  .timeline-item:hover .timeline-icon { transform: scale(1.1); background: var(--primary); color: white; }
+  .timeline-item:hover .timeline-icon img, .timeline-item:hover .timeline-icon svg { filter: brightness(0) invert(1); }
+  .timeline-card { padding: 2rem; }
+  .timeline-header { margin-bottom: 0.5rem; }
+  .timeline-company { font-size: 1.3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.3rem; }
+  .timeline-role { font-size: 1.05rem; color: var(--primary); font-weight: 600; }
+  .timeline-date { font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.2rem; }
+  .timeline-content { color: var(--text-secondary); line-height: 1.8; font-size: 1rem; }
+  .more-experience { margin-top: 2rem; text-align: center; }
+  .expand-btn { padding: 0.8rem 2rem; border: 2px solid var(--primary); border-radius: 999px; background: transparent; color: var(--primary); font-weight: 600; cursor: pointer; transition: all 0.3s; }
+  .expand-btn:hover { background: var(--primary); color: white; }
+  .hidden-experience { max-height: 0; overflow: hidden; transition: max-height 0.7s ease-in-out; }
+  .hidden-experience.expanded { max-height: 2000px; }
+
+/* Contact Section */
+.contact { background: var(--bg-main); }
+.contact-container{
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; padding: 4rem;
+}
+.contact-info h2{ font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; }
+.contact-info p{ color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem; }
+.contact-social{ display:flex; gap:1rem; margin-bottom:2rem; }
+
+/* 圆形按钮外观（a/button 共用） */
+.contact-icon{
+  width:52px; height:52px; border-radius:50%;
+  background: rgba(139,92,246,.10);
+  border:2px solid var(--primary);
+  color:var(--primary);
+  display:flex; align-items:center; justify-content:center;
+  transition: all .3s;
+  overflow:hidden; cursor:pointer;
+}
+/* 纯图片图标（GitHub/LinkedIn/Email） */
+.contact-icon .icon{ width:28px; height:28px; display:block; }
+
+/* 可变色图标（WeChat/RED：用 mask）——注意：与上面 <img> 不冲突 */
+.icon-mask{
+  width:28px; height:28px; display:block; background-color: currentColor;
+  -webkit-mask: var(--src) no-repeat center/contain;
+          mask: var(--src) no-repeat center/contain;
+}
+
+/* 通用 hover 效果（默认紫色方案） */
+.contact-icon:hover{
+  transform: translateY(-5px);
+  background: var(--primary); color:#fff;
+  box-shadow: 0 10px 30px rgba(139,92,246,.5);
+}
+
+
+/* —— 卡片主题变量（亮/暗） —— */
+:root{
+  --card-bg: rgba(255,255,255,.92);   /* 亮主题卡片背景（更实） */
+  --card-fg: #1A0F3F;                 /* 亮主题文字色 */
+}
+.dark-theme{
+  --card-bg: rgba(26,15,63,.92);      /* 暗主题卡片背景（更实） */
+  --card-fg: #EDEAF7;                 /* 暗主题文字色 */
+}
+
+/* —— 两类弹窗（二维码 / 邮箱）统一规则 —— */
+.qr-modal, .email-modal{ position: fixed; inset: 0; display: none; z-index: 1000; }
+.qr-modal.show, .email-modal.show{ display: block; }
+
+/* 背景遮罩（更暗一点，降低干扰） */
+.qr-backdrop{
+  position:absolute; inset:0;
+  background: rgba(26,15,63,.55);
+  backdrop-filter: blur(3px) saturate(110%);
+  -webkit-backdrop-filter: blur(3px) saturate(110%);
+}
+
+/* 卡片容器（二维码/邮箱共用） */
+.qr-card, .email-card{
+  position: relative;
+  width: min(92vw, 520px);
+  margin: 9vh auto 0;
+  padding: 22px 22px 18px;
+  border-radius: 22px;
+  background: var(--card-bg);
+  color: var(--card-fg);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 24px 60px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.18);
+  animation: card-pop .24s ease-out both;
+}
+@keyframes card-pop{
+  from{ transform: translateY(8px) scale(.98); opacity: .6; }
+  to  { transform: translateY(0)  scale(1);   opacity: 1; }
+}
+
+/* 标题与关闭 */
+.qr-card h3, .email-card h3{
+  margin: 0 0 12px;
+  font-size: 1.25rem; font-weight: 800;
+  color: var(--primary);
+}
+.qr-close{
+  position: absolute; top: 10px; right: 12px;
+  width: 32px; height: 32px; line-height: 30px; text-align: center;
+  border-radius: 50%;
+  background: rgba(0,0,0,.06); border: 1px solid rgba(0,0,0,.06);
+  color: var(--card-fg); cursor: pointer;
+  transition: transform .15s ease, background .2s ease, box-shadow .2s ease;
+}
+.qr-close:hover{ transform: scale(1.07); background: rgba(0,0,0,.10); box-shadow: 0 6px 16px rgba(0,0,0,.18); }
+
+/* —— 二维码专属 —— */
+#qrImg{
+  display:block; width: 80%; max-width: 360px; margin: 10px auto 14px;
+  background:#fff; border-radius:14px;
+  box-shadow: 0 14px 34px rgba(0,0,0,.28);
+}
+.qr-id{
+  display:flex; align-items:center; justify-content:center;
+  gap: 10px; margin: 10px 0 0;
+}
+#qrIdText{
+  padding: 8px 14px; border-radius: 999px;
+  background: rgba(139,92,246,.14);
+  color: var(--card-fg);
+  border: 1px solid rgba(139,92,246,.35);
+  font-weight: 700;
+}
+.qr-copy{
+  padding: 8px 14px; border-radius: 999px;
+  background: transparent;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  font-weight: 700; cursor: pointer;
+  transition: .22s ease;
+}
+.qr-copy:hover, .qr-copy.copied{
+  background: var(--primary); color:#fff; border-color: var(--primary);
+}
+.qr-tip{ font-size:.95rem; margin-top:8px; color: var(--card-fg); }
+
+/* —— 邮箱列表弹窗 —— */
+.email-card{ padding-top: 20px; }
+.email-list{
+  list-style:none; padding:0; margin:12px 0 6px;
+  display:flex; flex-direction:column; gap:12px;
+}
+.email-item{
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  padding:12px 14px;
+  border-radius:16px;
+  background: var(--card-bg);
+  color: var(--card-fg);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 12px 28px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.12);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+}
+.email-item:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 20px 44px rgba(0,0,0,.24);
+  border-color: rgba(139,92,246,.35);
+}
+.email-text{ 
+  color: var(--card-fg);
+  font-weight: 800; letter-spacing: .2px; text-decoration:none; overflow-wrap:anywhere;
+}
+.email-copy{
+  padding: 8px 14px; border-radius: 999px;
+  background: transparent;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  font-weight: 800; cursor: pointer;
+  transition: .22s ease;
+}
+.email-copy:hover, .email-copy.copied{
+  background: var(--primary); color:#fff; border-color: var(--primary);
+}
+
+/* —— 表单保留 —— */
+.contact-form{ display:flex; flex-direction:column; gap:1.5rem; }
+.form-group{ display:flex; flex-direction:column; gap:.5rem; }
+.form-group label{ font-weight:600; color:var(--text-primary); font-size:.95rem; }
+.form-group input, .form-group textarea{
+  padding:1rem 1.5rem; background:var(--bg-alt); border:2px solid var(--border-color);
+  border-radius:16px; color:var(--text-primary); font-size:1rem; font-family:'Inter',sans-serif;
+  transition:all .3s;
+}
+.form-group input:focus,.form-group textarea:focus{
+  outline:none; border-color:var(--primary-light); box-shadow:0 0 0 4px rgba(139,92,246,.1);
+}
+.form-group textarea{ resize:vertical; min-height:150px; }
+.submit-btn{
+  padding:1.2rem 3rem; background:linear-gradient(135deg,var(--primary),var(--primary-light));
+  border:none; border-radius:999px; color:#fff; font-weight:700; font-size:1.05rem; cursor:pointer;
+  transition:all .3s; box-shadow:0 4px 20px rgba(139,92,246,.3);
+}
+.submit-btn:hover{ transform:translateY(-3px); box-shadow:0 8px 35px rgba(139,92,246,.5); }
+
+/* —— Footer(原样) —— */
+footer{ padding:3rem 6%; background:var(--bg-alt); color:var(--text-secondary); text-align:center; border-top:1px solid var(--border-color); }
+
+/* —— 响应式（保持你的断点） —— */
+@media (max-width: 1024px){
+  .hero-container, .contact-container, .insights-grid { grid-template-columns: 1fr; }
+  .about-container { grid-template-columns: 1fr; gap:2rem; }
+  .about-main { grid-template-columns: 1fr; }
+  .stats { flex-direction: row; justify-content: center; }
+  .stat-card { flex: 1; }
+  .hero-avatar, .about-image { margin: 2rem auto 0; width: 300px; height: 300px; }
+  .skills-grid { grid-template-columns: repeat(3, 1fr); }
+  .hero-content { text-align: center; }
+  .hero-buttons { justify-content: center; }
+  .timeline::before { left: 30px; }
+  .timeline-item { grid-template-columns: 60px 1fr; gap: 1.5rem; }
+}
+@media (max-width: 768px){
+  .project-card { grid-template-columns: 1fr; }
+  .project-image { height: 250px; }
+}
+@media (max-width: 640px){
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-title-main { font-size: 3.5rem; }
+  h1 { font-size: 3rem; }
+  .section-title { font-size: 2.5rem; }
+  .stats { flex-direction: column; }
+}
+
+</style>
+
+</style>
+</head>
+<body class="light-theme">
+
+<nav id="navbar">
+  <div class="logo">MC</div>
+  <div class="nav-links">
+    <a href="#about"><span class="zh">关于</span><span class="en" style="display:none;">About</span></a>
+    <a href="#skills"><span class="zh">技能</span><span class="en" style="display:none;">Skills</span></a>
+    <a href="#projects"><span class="zh">项目</span><span class="en" style="display:none;">Projects</span></a>
+    <a href="#insights"><span class="zh">洞察</span><span class="en" style="display:none;">Insights</span></a>
+    <a href="#experience"><span class="zh">经历</span><span class="en" style="display:none;">Experience</span></a>
+    <a href="#contact"><span class="zh">联系</span><span class="en" style="display:none;">Contact</span></a>
+  </div>
+  <div class="nav-controls">
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1><span class="gradient-text"><span class="zh">你好，我是</span><span class="en" style="display:none;">Hello, I'm</span></span></h1>
+      <h1 class="hero-title-main typewriter"><span class="zh">Michelle Chen 陈美晖</span><span class="en" style="display:none;">Michelle Chen</span></h1>
+      <p class="hero-subtitle"><span class="zh">售前解决方案工程师 | 技术咨询 | 技术开发</span><span class="en" style="display:none;">Pre-Sales & Cloud Solution Engineer</span></p>
+      <p class="hero-description">
+        <span class="zh">将技术转化为可衡量的商业价值。我在复杂技术方案与客户需求之间搭建桥梁，专注于前端开发、云架构、数据分析和解决方案设计。</span>
+        <span class="en" style="display:none;">Turning technology into measurable business value. I bridge the gap between complex technical solutions and client needs, specializing in cloud architecture, data analytics, and solution design.</span>
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary"><span class="zh">查看项目 →</span><span class="en" style="display:none;">View Projects →</span></a>
+        <a href="#" class="btn btn-ghost"><span class="zh">📄 下载简历</span><span class="en" style="display:none;">📄 Download Resume</span></a>
+      </div>
+    </div>
+    <div class="hero-avatar">
+      <video id="heroVideo"
+             autoplay
+             loop
+             muted
+             playsinline
+             preload="none"
+             poster="images/hero_poster.jpg"
+             width="420" height="420">
+        <!-- 浏览器会优先用第一个能解码的来源 -->
+        <source src="images/hero_avatar_720_clean.mp4" type="video/mp4">
+        <source src="images/hero_avatar_720.webm" type="video/webm">
+        您的浏览器不支持视频播放。
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-header">
+    <h2 class="section-title gradient-text"><span class="zh">关于我</span><span class="en" style="display:none;">About Me</span></h2>
+    <p class="section-subtitle"><span class="zh">技术与商业之间的翻译官</span><span class="en" style="display:none;">A translator between technology and business</span></p>
+  </div>
+  <div class="about-container">
+    <div class="about-image">
+      <img src="images/picture.JPG" alt="About">
+    </div>
+    <div class="about-main">
+        <div class="about-content glass-card">
+          <p class="about-text">
+            <span class="zh">我把自己定位为一名兼具商业思维与技术实践能力的复合型人才，拥有管理学士学位和世界前百强校西澳大学的信息技术硕士学位（均分Distinction）。我擅长扮演连接商业需求与技术实现的"桥梁"角色。在惠普（HPE）的解决方案顾问实习中，我将这种复合能力应用于实践，通过深度分析客户痛点，设计出可为金融客户降低超20%TCO的超融合解决方案。</span>
+            <span class="en" style="display:none;">I position myself as a hybrid talent with both business acumen and technical execution capabilities, holding a Bachelor's degree in Management and a Master's in Information Technology from UWA (top 100 globally, Distinction average). I excel at bridging business requirements and technical implementation. During my HPE solution consultant internship, I applied this hybrid capability by deeply analyzing client pain points and designing a hyperconverged solution that reduced TCO by over 20% for financial clients.</span>
+          </p>
+          <p class="about-text">
+            <span class="zh">我的实战能力源于从0到1独立负责的两个商业项目，在项目中我展现了强大的创新精神与自驱力。我曾通过优化服务流程将客户转化率提升30%以上，也曾利用API自动化将订单处理效率提升三倍以上，充分验证了我在数据驱动运营与技术问题解决上的综合能力。我相信，这种解决复杂问题的热情，结合流利的英语沟通能力，使我能够胜任任何需要深度理解业务并以技术驱动创新的挑战性岗位，为企业创造切实的商业价值。</span>
+            <span class="en" style="display:none;">My practical capabilities stem from independently leading two business projects from 0 to 1, where I demonstrated strong innovation and self-motivation. I've increased customer conversion rates by over 30% through service process optimization and boosted order processing efficiency by 3x through API automation, fully validating my comprehensive capabilities in data-driven operations and technical problem-solving. I believe this passion for solving complex problems, combined with fluent English communication skills, enables me to excel in any challenging role that requires deep business understanding and technology-driven innovation, creating tangible business value for enterprises.</span>
+          </p>
+          <div class="tabs">
+            <button class="tab active" onclick="handleTabClick(0)"><span class="zh">教育背景</span><span class="en" style="display:none;">Education</span></button>
+            <button class="tab" onclick="handleTabClick(1)"><span class="zh">证书认证</span><span class="en" style="display:none;">Certifications</span></button>
+          </div>
+          <div class="tab-content active" id="aboutTab0">
+            <div class="education-item">
+              <h4><span class="zh">信息技术硕士</span><span class="en" style="display:none;">Master of Information Technology</span></h4>
+              <span class="date">2024.07 - 2026.08 | <span class="zh">西澳大学</span><span class="en" style="display:none;">University of Western Australia</span></span>
+              <p><span class="zh">GPA: Distinction (6.0) - 前15% | 优秀奖学金 (10,000澳元)</span><span class="en" style="display:none;">GPA: Distinction (6.0) - Top 15% | Merit Scholarship (10,000 AUD)</span></p>
+              <p><span class="zh">核心课程：云计算、数据分析、机器学习、自然语言处理、敏捷Web开发、Linux工具与脚本</span><span class="en" style="display:none;">Core Courses: Cloud Computing, Data Analytics, Machine Learning, NLP, Agile Web Development, Linux Tools & Scripting</span></p>
+            </div>
+            <div class="education-item">
+              <h4><span class="zh">旅游管理学士</span><span class="en" style="display:none;">Bachelor of Tourism Management</span></h4>
+              <span class="date">2019.09 - 2023.06 | <span class="zh">福建师范大学</span><span class="en" style="display:none;">Fujian Normal University</span></span>
+              <p><span class="zh">核心课程：市场营销、统计学、项目管理 - 培养市场洞察、数据分析及项目落地能力</span><span class="en" style="display:none;">Core Courses: Marketing, Statistics, Project Management - Building market insight, data analysis, and project delivery capabilities</span></p>
+            </div>
+          </div>
+          <div class="tab-content" id="aboutTab1">
+            <div class="education-item"><h4>AWS Cloud Practitioner (<span class="zh">准备中</span><span class="en" style="display:none;">In Progress</span>)</h4><p><span class="zh">正在准备AWS CLF认证，强化云解决方案架构能力</span><span class="en" style="display:none;">Preparing for AWS CLF certification to strengthen cloud solution architecture capabilities</span></p></div>
+            <div class="education-item"><h4>PTE Academic - 74 (≈ <span class="zh">雅思</span><span class="en" style="display:none;">IELTS</span> 7.5)</h4><p><span class="zh">专业英语能力，多次全英文工作环境</span><span class="en" style="display:none;">Professional English proficiency, multiple full-English work environments</span></p></div>
+            <div class="education-item"><h4><span class="zh">英语六级 | 计算机等级证书 | 驾照</span><span class="en" style="display:none;">CET-6 | Computer Level 1 | Driver's License</span></h4></div>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat-card glass-card"><div class="stat-number">2+</div><p class="stat-label"><span class="zh">年工作经验</span><span class="en" style="display:none;">Years Experience</span></p></div>
+          <div class="stat-card glass-card"><div class="stat-number">7+</div><p class="stat-label"><span class="zh">完成项目</span><span class="en" style="display:none;">Projects Completed</span></p></div>
+          <div class="stat-card glass-card"><div class="stat-number">10+</div><p class="stat-label"><span class="zh">获奖与证书</span><span class="en" style="display:none;">Awards & Certs</span></p></div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <div class="section-header">
+    <h2 class="section-title gradient-text"><span class="zh">技术能力</span><span class="en" style="display:none;">Technical Expertise</span></h2>
+    <p class="section-subtitle"><span class="zh">我常用的技术与工具</span><span class="en" style="display:none;">Tools and technologies I use</span></p>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/python_logo.svg" alt="Python"></div><div class="skill-name">Python</div><div class="skill-category"><span class="zh">编程</span><span class="en" style="display:none;">Programming</span></div></div>
+    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/java_logo.svg" alt="Java"></div><div class="skill-name">Java</div><div class="skill-category"><span class="zh">编程</span><span class="en" style="display:none;">Programming</span></div></div>
+    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/mysql_logo.svg" alt="SQL"></div><div class="skill-name">SQL</div><div class="skill-category"><span class="zh">数据库</span><span class="en" style="display:none;">Database</span></div></div>
+    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/tableau_logo.svg" alt="Tableau"></div><div class="skill-name">Tableau</div><div class="skill-category"><span class="zh">数据分析</span><span class="en" style="display:none;">Analytics</span></div></div>
+    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/excel_logo.svg" alt="Excel"></div><div class="skill-name">Excel</div><div class="skill-category"><span class="zh">数据分析</span><span class="en" style="display:none;">Analytics</span></div></div>
+    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/aws_logo.svg" alt="AWS"></div><div class="skill-name">AWS</div><div class="skill-category"><span class="zh">云服务</span><span class="en" style="display:none;">Cloud</span></div></div>
+    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/linux_logo.svg" alt="Linux"></div><div class="skill-name">Linux</div><div class="skill-category"><span class="zh">系统</span><span class="en" style="display:none;">System</span></div></div>
+    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/shell_logo.svg" alt="Shell"></div><div class="skill-name">Shell</div><div class="skill-category"><span class="zh">自动化</span><span class="en" style="display:none;">Automation</span></div></div>
+    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/IOT_logo.svg" alt="IoT"></div><div class="skill-name">IoT</div><div class="skill-category"><span class="zh">连接</span><span class="en" style="display:none;">Connectivity</span></div></div>
+    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/figma_logo.svg" alt="Figma"></div><div class="skill-name">Figma</div><div class="skill-category"><span class="zh">设计</span><span class="en" style="display:none;">Design</span></div></div>
+    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/sc_logo.svg" alt="Supply_Chain"></div><div class="skill-name"><span class="zh">供应链</span><span class="en" style="display:none;">Supply Chain</span></div><div class="skill-category"><span class="zh">领域</span><span class="en" style="display:none;">Domain</span></div></div>
+    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/pre_logo.svg" alt="Supply_Chain"></div><div class="skill-name"><span class="zh">演示表达</span><span class="en" style="display:none;">Presentation</span></div><div class="skill-category"><span class="zh">软技能</span><span class="en" style="display:none;">Soft Skill</span></div></div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="section-header">
+    <h2 class="section-title gradient-text"><span class="zh">项目展示</span><span class="en" style="display:none;">Featured Projects</span></h2>
+    <p class="section-subtitle"><span class="zh">把点子落地成可衡量的业务结果</span><span class="en" style="display:none;">Turning ideas into measurable business results</span></p>
+  </div>
+  <div class="project-filters">
+    <button class="filter-btn active" data-filter="all"><span class="zh">全部</span><span class="en" style="display:none;">All</span></button>
+    <button class="filter-btn" data-filter="cloud"><span class="zh">云解决方案</span><span class="en" style="display:none;">Cloud Solutions</span></button>
+    <button class="filter-btn" data-filter="ecommerce"><span class="zh">电商解决方案</span><span class="en" style="display:none;">E-commerce</span></button>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card glass-card" data-category="cloud">
+      <div class="project-image"><img src="images/Solutio_Architecture.png" alt="HPE dHCI Solution"></div>
+      <div class="project-content">
+        <h3 class="project-title"><span class="zh">HPE dHCI 金融行业解决方案</span><span class="en" style="display:none;">HPE dHCI Financial Solution</span></h3>
+        <div class="project-tags"><span class="tag"><span class="zh">云计算</span><span class="en" style="display:none;">Cloud</span></span><span class="tag"><span class="zh">售前</span><span class="en" style="display:none;">Pre-Sales</span></span><span class="tag"><span class="zh">TCO建模</span><span class="en" style="display:none;">TCO Modeling</span></span></div>
+        <p class="project-description"><span class="zh">为金融客户设计基于HPE GreenLake的混合云架构方案，通过需求分析、容量规划和TCO建模，论证该方案可降低20%运维成本并提升4倍性能，成功推动项目进入客户汇报阶段。</span><span class="en" style="display:none;">Designed HPE GreenLake-based hybrid cloud architecture for financial clients through requirement analysis, capacity planning, and TCO modeling. Demonstrated 20% cost reduction and 4x performance improvement, successfully advancing the project to client presentation stage.</span></p>
+        <div class="project-links"><a href="https://chemiui.github.io/dHCI-Financial-Solution-Project/" target="_blank" class="project-link"><span class="zh">查看报告 →</span><span class="en" style="display:none;">View Report →</span></a></div>
+      </div>
+    </div>
+    <div class="project-card glass-card" data-category="ecommerce">
+      <div class="project-image"><img src="images/Digital_line.png" alt="BaLing Digital"></div>
+      <div class="project-content">
+        <h3 class="project-title"><span class="zh">岭北数码｜智能零售与指标化运营</span><span class="en" style="display:none;">BaLing Digital - Smart Retail & KPI Operations</span></h3>
+        <div class="project-tags"><span class="tag"><span class="zh">电商</span><span class="en" style="display:none;">E-commerce</span></span><span class="tag"><span class="zh">用户运营</span><span class="en" style="display:none;">CRM</span></span><span class="tag"><span class="zh">数据分析</span><span class="en" style="display:none;">Analytics</span></span></div>
+        <p class="project-description"><span class="zh">从零搭建二手数码电商项目，通过信任解决方案设计（认证+SLA售后）和数据驱动运营（A/B测试、私域社群），实现转化率提升30%、复购率30%，月GMV破万元。</span><span class="en" style="display:none;">Built a second-hand digital retail project from scratch. Through trust solution design and data-driven operations, achieved 30% conversion rate increase, 30% repeat purchase rate, and monthly GMV exceeding 10,000.</span></p>
+        <div class="project-links"><a href="https://chemiui.github.io/Northridge_Digital/" target="_blank" class="project-link"><span class="zh">查看详情 →</span><span class="en" style="display:none;">View Details →</span></a></div>
+      </div>
+    </div>
+    <div class="project-card glass-card" data-category="ecommerce">
+      <div class="project-image"><img src="images/API.png" alt="E-commerce Automation"></div>
+      <div class="project-content">
+        <h3 class="project-title"><span class="zh">电商交付自动化｜Serverless 流水线</span><span class="en" style="display:none;">E-commerce Fulfillment Automation</span></h3>
+        <div class="project-tags"><span class="tag"><span class="zh">自动化</span><span class="en" style="display:none;">Automation</span></span><span class="tag"><span class="zh">API集成</span><span class="en" style="display:none;">API</span></span><span class="tag"><span class="zh">增长</span><span class="en" style="display:none;">Growth</span></span></div>
+        <p class="project-description"><span class="zh">设计并实施基于云存储API的自动化订单交付系统，将人工发货改造为"下单即交付"的无服务器流水线，订单处理效率提升300%，实现秒级响应和月营收2000+元。</span><span class="en" style="display:none;">Designed and implemented cloud storage API-based automated order fulfillment system. Achieved 300% efficiency improvement with second-level response and monthly revenue exceeding 2,000.</span></p>
+        <div class="project-links"><a href="#" class="project-link"><span class="zh">技术说明 →</span><span class="en" style="display:none;">Tech Notes →</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="insights" id="insights">
+  <div class="section-header">
+    <h2 class="section-title gradient-text"><span class="zh">行业洞察</span><span class="en" style="display:none;">Industry Insights</span></h2>
+    <p class="section-subtitle"><span class="zh">展示我的思考路径：观察 → 验证 → 结论</span><span class="en" style="display:none;">My reasoning pattern: Observation → Validation → Conclusion</span></p>
+  </div>
+  <div class="insights-grid">
+    <div class="insight-card glass-card">
+        <h3 class="insight-title"><span class="zh">智能物流：指标优先而非"功能堆叠"</span><span class="en" style="display:none;">Smart Logistics: KPIs over Feature Stacking</span></h3>
+        <p class="insight-subtitle"><span class="zh">我的观察 → 验证思路 → 结论</span><span class="en" style="display:none;">Observation → Validation → Conclusion</span></p>
+        <p class="insight-text">
+            <span class="zh">观察：项目容易困留在"功能上云"，但业务更关心拣收时效、周转率与错拣率。
+验证：先在样本仓做 A/B，只改 1-2 个环节，跟踪 Dwell time 与出库时延。
+结论：以单指标突破的"窄切口方案"更易复制，售前话术也更聚焦。</span>
+            <span class="en" style="display:none;">Observation: Projects often get stuck on "cloudifying features" rather than moving business KPIs.
+Validation: A/B test in pilot warehouse; tweak 1-2 steps; track dwell time & shipping latency.
+Conclusion: Narrow KPI-first approaches scale better and sharpen the presales narrative.</span>
+        </p>
+        <a href="#" class="insight-link"><span class="zh">查看分析报告 →</span><span class="en" style="display:none;">View Report →</span></a>
+    </div>
+    <div class="insight-card glass-card">
+        <h3 class="insight-title"><span class="zh">供应链数字化：先打通数据，再谈算法</span><span class="en" style="display:none;">Supply Chain Digitization: Data First, Then Algorithms</span></h3>
+        <p class="insight-subtitle"><span class="zh">踩坑 → 可行路径 → 价值衡量</span><span class="en" style="display:none;">Pitfalls → Path → Measurement</span></p>
+        <p class="insight-text">
+            <span class="zh">坑：脏数据与口径不一让模型失真。
+路径：主数据治理 + 事件总线，再上预测与补货策略。
+衡量：看毛利贡献/持有成本/缺货损失的综合 ROI，而不是只看准确率。</span>
+            <span class="en" style="display:none;">Pitfalls: Dirty data and inconsistent metrics break models.
+Path: Master data governance + event bus → forecasting & replenishment.
+Measurement: ROI via margin contribution / holding cost / OOS loss, not accuracy alone.</span>
+        </p>
+        <a href="#" class="insight-link"><span class="zh">查看分析报告 →</span><span class="en" style="display:none;">View Report →</span></a>
+    </div>
+    <div class="insight-card glass-card">
+        <h3 class="insight-title"><span class="zh">云原生成本：业务峰谷 ≠ 技术弹性</span><span class="en" style="display:none;">Cloud-Native Cost: Business Peaks ≠ Tech Elasticity</span></h3>
+        <p class="insight-subtitle"><span class="zh">假设 → 实验 → 决策</span><span class="en" style="display:none;">Hypothesis → Experiment → Decision</span></p>
+        <p class="insight-text">
+            <span class="zh">假设：Serverless 一定更省？
+实验：三类负载模拟（稳定/突发/批处理），纳入冷启动、出网费与阶梯价。
+决策：稳定流量用容器+预留；突发用 Serverless；批处理走 Spot 混部——组合拳更稳。</span>
+            <span class="en" style="display:none;">Hypothesis: Is Serverless always cheaper?
+Experiment: Simulate stable/burst/batch workloads; factor in cold start, egress, tiered pricing.
+Decision: Containers+reserved for stable, serverless for bursts, spot mix for batch—portfolio wins.</span>
+        </p>
+        <a href="#" class="insight-link"><span class="zh">查看分析报告 →</span><span class="en" style="display:none;">View Report →</span></a>
+    </div>
+  </div>
+</section>
+
+
+<section class="experience" id="experience">
+    <div class="section-header">
+      <h2 class="section-title gradient-text"><span class="zh">工作经历</span><span class="en" style="display:none;">Professional Experience</span></h2>
+      <p class="section-subtitle"><span class="zh">专业实践与成长轨迹</span><span class="en" style="display:none;">Career journey and growth</span></p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-icon"><img src="images/hpe-labs-svgrepo-com.svg" alt="HPE"></div>
+        <div class="timeline-card glass-card">
+          <div class="timeline-header">
+            <h3 class="timeline-company"><span class="zh">Hewlett Packard Enterprise (HPE)</span><span class="en" style="display:none;">Hewlett Packard Enterprise (HPE)</span></h3>
+            <p class="timeline-role"><span class="zh">解决方案顾问实习生</span><span class="en" style="display:none;">Solution Consultant Intern</span></p>
+            <p class="timeline-date">2025.09 - <span class="zh">至今</span><span class="en" style="display:none;">Present</span></p>
+          </div>
+          <div class="timeline-content">
+            <span class="zh">在校企合作项目中，为模拟金融客户设计混合云转型方案。完整经历了从客户发现、需求分析到方案设计与TCO价值论证的售前闭环。运用HPE专业工具进行容量规划，论证了方案在成本与性能上的显著优势。</span>
+            <span class="en" style="display:none;">In a university-enterprise program, designed a hybrid cloud transformation solution for a simulated financial client. Experienced the full pre-sales cycle from discovery and requirement analysis to solution design and TCO value proposition. Used HPE's professional tools for capacity planning, demonstrating significant cost and performance advantages.</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-icon"><img src="images/UWA_logo.svg" alt="UWA"></div>
+        <div class="timeline-card glass-card">
+          <div class="timeline-header">
+            <h3 class="timeline-company"><span class="zh">西澳大学IT支持部门</span><span class="en" style="display:none;">University of Western Australia IT Support</span></h3>
+            <p class="timeline-role"><span class="zh">技术协作成员</span><span class="en" style="display:none;">Technical Collaborator</span></p>
+            <p class="timeline-date">2025.07 - <span class="zh">至今</span><span class="en" style="display:none;">Present</span></p>
+          </div>
+          <div class="timeline-content">
+            <span class="zh">负责记录团队会议纪要、为代码添加中文注释、撰写系统功能README文档，确保项目信息在各部门间的有效传递。参与前端界面简单修改，通过AI辅助完成代码编写并负责测试与用户反馈调整。这些工作让我认识到自己更擅长将技术概念清晰表达和跨部门沟通协调。</span>
+            <span class="en" style="display:none;">Responsible for meeting minutes, adding Chinese annotations to code, and writing README documentation to ensure effective information flow across departments. Participated in simple frontend modifications, completed coding with AI assistance and handled testing and user feedback. These experiences helped me realize my strength in clear technical communication and cross-department coordination.</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-icon"><img src="https://cdn.simpleicons.org/honda/8B5CF6" alt="Honda"></div>
+        <div class="timeline-card glass-card">
+          <div class="timeline-header">
+            <h3 class="timeline-company"><span class="zh">本田汽车 Honda North</span><span class="en" style="display:none;">Honda North</span></h3>
+            <p class="timeline-role"><span class="zh">线上营销顾问（兼职）</span><span class="en" style="display:none;">Online Marketing Consultant (Part-time)</span></p>
+            <p class="timeline-date">2025.03 - <span class="zh">至今</span><span class="en" style="display:none;">Present</span></p>
+          </div>
+          <div class="timeline-content">
+            <span class="zh">通过社交媒体与潜在客户沟通，深度挖掘购车与保养需求，成功引导10+位客户至线下成交。在全英文环境中协调客户与经销商需求，提供专业的双语客户服务。这段经历强化了我的客户需求分析与跨文化沟通能力。</span>
+            <span class="en" style="display:none;">Communicated with potential customers via social media, deeply explored purchase and maintenance needs, successfully guided 10+ clients to offline transactions. Coordinated customer and dealer needs in full-English environment. This experience strengthened my customer needs analysis and cross-cultural communication skills.</span>
+          </div>
+        </div>
+      </div>
+      <div class="hidden-experience" id="moreExperience">
+        <div class="timeline-item">
+            <div class="timeline-icon"><img src="images/coffee_logo.svg" alt="The Coffee Club"></div>
+            <div class="timeline-card glass-card">
+                <div class="timeline-header">
+                  <h3 class="timeline-company"><span class="zh">The Coffee Club Australia</span><span class="en" style="display:none;">The Coffee Club Australia</span></h3>
+                  <p class="timeline-role"><span class="zh">门店运营（All-rounder）</span><span class="en" style="display:none;">Store Operations (All-rounder)</span></p>
+                  <p class="timeline-date">2024.09 - <span class="zh">至今</span><span class="en" style="display:none;">Present</span></p>
+                </div>
+                <div class="timeline-content">
+                  <span class="zh">负责前台收银、咖啡制作、店面清洁等多项工作的灵活切换，在多元文化环境中与不同国家背景的同事密切协作。通过全英文沟通协调日常工作流程，快速适应澳洲本土服务标准。培养了快节奏环境下的多任务处理能力和跨文化沟通技巧。</span>
+                  <span class="en" style="display:none;">Flexibly switched between cashier, coffee making, and cleaning duties. Collaborated closely with colleagues from diverse backgrounds in a multicultural environment. Coordinated daily workflows in full English and quickly adapted to Australian service standards. Developed multitasking abilities and cross-cultural communication skills in a fast-paced environment.</span>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon"><img src="images/tourism_logo.svg" alt="Tourism"></div>
+          <div class="timeline-card glass-card">
+              <div class="timeline-header">
+                <h3 class="timeline-company"><span class="zh">福建海外实业旅游有限公司</span><span class="en" style="display:none;">Fujian Overseas Industrial Travel Co.</span></h3>
+                <p class="timeline-role"><span class="zh">业务运营实习生</span><span class="en" style="display:none;">Business Operations Intern</span></p>
+                <p class="timeline-date">2023.02 - 2023.08</p>
+              </div>
+              <div class="timeline-content">
+                <span class="zh">通过电话、线上咨询等方式与潜在客户一对一沟通，深入了解客户旅行偏好、预算范围和行程需求，推荐合适的旅游产品。维护客户关系，跟进决策进度，通过专业介绍和耐心服务提升客户购买意愿。协助团队进行新产品推广，通过客户反馈收集市场信息为产品优化提供参考。</span>
+                <span class="en" style="display:none;">Communicated one-on-one with potential customers via phone and online consultation, deeply understood travel preferences, budget ranges, and itinerary needs. Maintained customer relationships, followed up on decision progress, and enhanced purchase intention through professional introduction and patient service. Assisted team in new product promotion and collected market information through customer feedback.</span>
+              </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon"><img src="images/government_logo.svg" alt="government"></div>
+          <div class="timeline-card glass-card">
+              <div class="timeline-header">
+                <h3 class="timeline-company"><span class="zh">福州市文化和旅游局</span><span class="en" style="display:none;">Fuzhou Culture & Tourism Bureau</span></h3>
+                <p class="timeline-role"><span class="zh">旅游资源调查员</span><span class="en" style="display:none;">Tourism Resources Researcher</span></p>
+                <p class="timeline-date">2022.06 - 2022.09</p>
+              </div>
+              <div class="timeline-content">
+                <span class="zh">对福州市及周边重点旅游景点进行系统性实地调研，通过标准化表格进行GPS定位、基础设施评估、文化价值打分等数据采集工作。主动提出使用数字化工具（微信小程序）进行数据收集，显著提升工作效率。运用Excel进行深度数据分析，撰写多份调研报告，为福州市旅游发展规划提供决策参考。</span>
+                <span class="en" style="display:none;">Conducted systematic on-site research on key tourist attractions in Fuzhou and surrounding areas. Performed data collection including GPS positioning, infrastructure assessment, and cultural value scoring through standardized forms. Proactively proposed using digital tools (WeChat mini-program) for data collection, significantly improving efficiency. Conducted in-depth data analysis with Excel and wrote multiple research reports providing decision-making references for Fuzhou tourism development planning.</span>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="more-experience">
+        <button class="expand-btn" onclick="toggleExperience()">
+          <span class="zh" id="expandText">展开更多经历 ↓</span>
+          <span class="en" id="expandTextEn" style="display:none;">Show More Experience ↓</span>
+        </button>
+      </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-header">
+    <h2 class="section-title gradient-text">
+      <span class="zh">让我们合作</span><span class="en" style="display:none;">Let's Collaborate</span>
+    </h2>
+    <p class="section-subtitle">
+      <span class="zh">期待把技术变成可靠的业务价值</span>
+      <span class="en" style="display:none;">Let's turn technology into reliable business value</span>
+    </p>
+  </div>
+
+  <div class="contact-container glass-card">
+    <div class="contact-info">
+      <h2 class="gradient-text">
+        <span class="zh">取得联系</span><span class="en" style="display:none;">Get In Touch</span>
+      </h2>
+      <p>
+        <span class="zh">我目前正在寻找新的机会，邮箱始终开放。无论您有问题还是只是想打个招呼，我都会尽力回复！</span>
+        <span class="en" style="display:none;">I'm currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</span>
+      </p>
+
+      <!-- 社交按钮 -->
+      <div class="contact-social">
+        <!-- GitHub -->
+        <a class="contact-icon" href="https://github.com/CheMiui" target="_blank" rel="noopener" title="GitHub">
+          <img class="icon" src="images/github_logo.svg" alt="GitHub">
+        </a>
+        <!-- LinkedIn -->
+        <a class="contact-icon" href="https://www.linkedin.com/in/michelle-chen-10921b385/" target="_blank" rel="noopener" title="LinkedIn">
+          <img class="icon" src="images/linkedin_logo.svg" alt="LinkedIn">
+        </a>
+        <!-- Email -->
+        <button class="contact-icon"
+                type="button"
+                data-modal="email"
+                aria-label="Email" title="Email">
+          <img class="icon" src="images/email_logo.svg" alt="Email">
+        </button>
+        <!-- WeChat（弹窗二维码） -->
+        <button class="contact-icon"
+                type="button"
+                data-modal="qr"
+                data-title="微信 WeChat"
+                data-id="cmh8993"
+                data-img="images/wechat_QR.jpg"
+                aria-label="WeChat" title="WeChat">
+          <img class="icon" src="images/wechat_logo.svg" alt="WeChat">
+        </button>
+        
+        <!-- RED（弹窗二维码） -->
+        <a class="contact-icon"
+          href="https://www.xiaohongshu.com/user/profile/650db37a0000000016038a23"
+          target="_blank" rel="noopener" aria-label="RED" title="RED">
+          <img class="icon" src="images/Xiaohongshu_logo.svg" alt="RED">
+        </a>
+      </div>
+    </div>
+
+    <!-- 表单保持不变 -->
+    <form class="contact-form" onsubmit="return false;">
+      <div class="form-group"><label><span class="zh">您的姓名</span><span class="en" style="display:none;">Your Name</span></label><input type="text" placeholder="请输入您的姓名" required></div>
+      <div class="form-group"><label><span class="zh">邮箱地址</span><span class="en" style="display:none;">Email Address</span></label><input type="email" placeholder="请输入您的邮箱" required></div>
+      <div class="form-group"><label><span class="zh">主题</span><span class="en" style="display:none;">Subject</span></label><input type="text" placeholder="请输入主题" required></div>
+      <div class="form-group"><label><span class="zh">留言内容</span><span class="en" style="display:none;">Message</span></label><textarea placeholder="请输入您的留言..." required></textarea></div>
+      <button type="submit" class="submit-btn"><span class="zh">发送消息</span><span class="en" style="display:none;">Send Message</span></button>
+    </form>
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2025 Michelle Chen. All rights reserved.</p>
+</footer>
+
+<script>
+let currentTheme = 'light';
+function toggleTheme() {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  document.body.className = currentTheme + '-theme' + (currentLang === 'en' ? ' en-mode' : '');
+  const themeBtn = document.querySelector('.theme-toggle');
+  themeBtn.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+}
+
+let currentLang = 'zh';
+function toggleLanguage() {
+  currentLang = currentLang === 'zh' ? 'en' : 'zh';
+  const langBtn = document.querySelector('.lang-toggle');
+  langBtn.textContent = currentLang === 'zh' ? 'EN' : 'CN';
+  if (currentLang === 'en') { document.body.classList.add('en-mode'); } else { document.body.classList.remove('en-mode'); }
+  document.querySelectorAll('.zh').forEach(el => { el.style.display = currentLang === 'zh' ? '' : 'none'; });
+  document.querySelectorAll('.en').forEach(el => { el.style.display = currentLang === 'en' ? '' : 'none'; });
+  toggleExperience(true);
+}
+
+function handleTabClick(index) {
+  const tabs = document.querySelectorAll('.about-content .tab');
+  const contents = document.querySelectorAll('.about-content .tab-content');
+  tabs.forEach(tab => tab.classList.remove('active'));
+  contents.forEach(content => content.classList.remove('active'));
+  if (tabs[index]) tabs[index].classList.add('active');
+  if (contents[index]) contents[index].classList.add('active');
+}
+
+function toggleExperience(keepState = false) {
+  const moreExp = document.getElementById('moreExperience');
+  const expandText = document.getElementById('expandText');
+  const expandTextEn = document.getElementById('expandTextEn');
+  let expand = !moreExp.classList.contains('expanded');
+  if(keepState) expand = !expand;
+
+  if (expand) {
+    moreExp.classList.add('expanded');
+    expandText.textContent = '收起经历 ↑';
+    expandTextEn.textContent = 'Show Less ↑';
+  } else {
+    moreExp.classList.remove('expanded');
+    expandText.textContent = '展开更多经历 ↓';
+    expandTextEn.textContent = 'Show More Experience ↓';
+  }
+}
+
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('navbar');
+  if (window.scrollY > 50) { navbar.classList.add('scrolled'); } else { navbar.classList.remove('scrolled'); }
+});
+
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.getAttribute('data-filter');
+    projectCards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      card.style.display = (filter === 'all' || category === filter) ? 'grid' : 'none';
+    });
+  });
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.section-header, .skill-card, .project-card, .timeline-item, .insight-card, .about-image, .about-main').forEach(el => {
+    observer.observe(el);
+});
+
+// Stagger delays per section for smoother animation
+document.querySelectorAll('.skills-grid .skill-card').forEach((card, index) => { card.style.transitionDelay = `${index * 0.05}s`; });
+document.querySelectorAll('.projects-grid .project-card').forEach((card, index) => { card.style.transitionDelay = `${index * 0.1}s`; });
+document.querySelectorAll('.insights-grid .insight-card').forEach((card, index) => { card.style.transitionDelay = `${index * 0.1}s`; });
+document.querySelectorAll('.timeline .timeline-item').forEach((card, index) => { card.style.transitionDelay = `${index * 0.1}s`; });
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { e.preventDefault(); const target = document.querySelector(this.getAttribute('href')); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } }); });
+</script>
+
+<div class="qr-modal" id="qrModal" aria-hidden="true">
+  <div class="qr-backdrop" data-close></div>
+  <div class="qr-card" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
+    <button class="qr-close" data-close aria-label="关闭">×</button>
+    <h3 id="qrTitle">二维码</h3>
+    <img id="qrImg" src="" alt="二维码" loading="lazy">
+    <p class="qr-id">
+      <span id="qrIdText">account-id</span>
+      <button class="qr-copy" id="qrCopyBtn" data-copy>复制</button>
+    </p>
+    <p class="qr-tip">手机端可长按二维码保存/识别</p>
+  </div>
+</div>
+
+<script>
+  (function(){
+    const modal  = document.getElementById('qrModal');
+    const title  = document.getElementById('qrTitle');
+    const img    = document.getElementById('qrImg');
+    const idText = document.getElementById('qrIdText');
+    const copyBtn= document.getElementById('qrCopyBtn');
+  
+    // 打开弹窗（事件代理：捕捉所有 data-modal="qr" 的按钮）
+    document.addEventListener('click', (e)=>{
+      const btn = e.target.closest('[data-modal="qr"]');
+      if(!btn) return;
+      title.textContent = btn.dataset.title || '二维码';
+      img.src  = btn.dataset.img || '';
+      img.alt  = (btn.dataset.title || '') + ' 二维码';
+      idText.textContent = btn.dataset.id || '';
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden','false');
+    });
+  
+    // 关闭：点遮罩或 ×，或按 ESC
+    modal?.addEventListener('click', (e)=>{
+      if(e.target.hasAttribute('data-close')){
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden','true');
+      }
+    });
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape' && modal?.classList.contains('show')){
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden','true');
+      }
+    });
+  
+    // 复制账号
+    copyBtn?.addEventListener('click', async ()=>{
+      const txt = (idText.textContent || '').trim();
+      if(!txt) return;
+      try{
+        await navigator.clipboard.writeText(txt);
+        copyBtn.textContent = '已复制';
+        copyBtn.classList.add('copied');
+        setTimeout(()=>{ copyBtn.textContent = '复制'; copyBtn.classList.remove('copied'); }, 1200);
+      }catch{
+        alert('复制失败，请手动选择复制');
+      }
+    });
+  })();
+  </script>  
+<!-- Email 选择弹窗 -->
+<div class="email-modal" id="emailModal" aria-hidden="true">
+  <div class="qr-backdrop" data-close></div>
+  <div class="qr-card email-card" role="dialog" aria-modal="true" aria-labelledby="emailTitle">
+    <button class="qr-close" data-close aria-label="关闭">×</button>
+    <h3 id="emailTitle">选择一个邮箱</h3>
+
+    <ul class="email-list">
+      <li class="email-item">
+        <!-- 点击邮箱文本 = 打开默认邮件客户端 -->
+        <a class="email-text" href="mailto:cmh001116@163.com">cmh001116@163.com</a>
+        <button class="email-copy" data-copy="cmh001116@163.com">复制</button>
+      </li>
+    
+      <li class="email-item">
+        <a class="email-text" href="mailto:cmh001116@outlook.com">cmh001116@outlook.com</a>
+        <button class="email-copy" data-copy="cmh001116@outlook.com">复制</button>
+      </li>
+    </ul>
+
+    <p class="qr-tip">可直接点击「写信」或复制邮箱地址，在你常用的邮件客户端里粘贴使用。</p>
+  </div>
+</div>
+<script>
+  (function(){
+    const emailModal = document.getElementById('emailModal');
+  
+    // 打开 Email 弹窗
+    document.addEventListener('click', (e)=>{
+      const btn = e.target.closest('[data-modal="email"]');
+      if(!btn) return;
+      emailModal.classList.add('show');
+      emailModal.setAttribute('aria-hidden','false');
+    });
+  
+    // 关闭（点遮罩/× 或 ESC）
+    emailModal?.addEventListener('click', (e)=>{
+      if(e.target.hasAttribute('data-close')){
+        emailModal.classList.remove('show');
+        emailModal.setAttribute('aria-hidden','true');
+      }
+    });
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape' && emailModal?.classList.contains('show')){
+        emailModal.classList.remove('show');
+        emailModal.setAttribute('aria-hidden','true');
+      }
+    });
+  
+    // 复制邮箱
+    emailModal?.addEventListener('click', async (e)=>{
+      const copyBtn = e.target.closest('.email-copy');
+      if(!copyBtn) return;
+      const text = copyBtn.getAttribute('data-copy') || '';
+      if(!text) return;
+      try{
+        await navigator.clipboard.writeText(text);
+        copyBtn.textContent = '已复制';
+        copyBtn.classList.add('copied');
+        setTimeout(()=>{ copyBtn.textContent = '复制'; copyBtn.classList.remove('copied'); }, 1200);
+      }catch{
+        alert('复制失败，请手动选择复制');
+      }
+    });
+  })();
+  </script>
+  
+</body>
+</html>
