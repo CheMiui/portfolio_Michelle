@@ -28,7 +28,7 @@
   * 平滑滚动、进入视口淡入；卡片悬停上浮与阴影加深；
   * Projects 支持轻量筛选；Experience 时间轴支持折叠/展开；
   * Contact：**多邮箱选择弹窗**（一键复制）、**WeChat 二维码弹窗**、小红书/GitHub/LinkedIn 外链。
-* **AI 数字人视频（Hero）**：用短视频把定位讲清楚；提供 mp4/webm + poster，移动端静音自动播放，保证首屏观感。
+* **AI 数字人视频（Hero）**：使用AI agent制作数字人形象,用短视频定位自身；提供 mp4/webm + poster，移动端静音自动播放，保证首屏观感。
 
 ---
 
