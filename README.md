@@ -3,7 +3,9 @@
 这是 **陈美晖（Michelle Chen）** 的现代化、响应式个人作品集网站，面向校招与初入职场的 **售前 / 云解决方案 / 产品-运营** 岗位。网站聚焦「真实项目复盘 + 可落地方案表达」，强调把技术转成业务语言与可量化指标。
 
 **在线访问（Live Demo）**：(https://chemiui.github.io/portfolio_Michelle/)
-（建议在此处放一张首页截图与一张 Projects 区截图）
+
+<img width="3288" height="1908" alt="homepage" src="https://github.com/user-attachments/assets/5d4bedd7-a2e6-4423-a21c-0fa8c9fdf6bd" />
+
 
 ---
 
@@ -14,6 +16,8 @@
 * **复合型定位**：懂业务、会拆解、能落地；对话对象既包括技术团队也包括业务方。
 * **数据驱动**：过程尽量留痕，结果尽量量化（TCO、SLA、转化、复购等指标）。
 * **解决方案思维**：不堆技术名词，专注“为什么选它”“怎么权衡”“值不值得”。
+<img width="1549" height="772" alt="skills" src="https://github.com/user-attachments/assets/5de7a5c3-8fa7-496f-a8d3-47a7e459bd47" />
+
 
 ---
 
@@ -29,6 +33,8 @@
   * Projects 支持轻量筛选；Experience 时间轴支持折叠/展开；
   * Contact：**多邮箱选择弹窗**（一键复制）、**WeChat 二维码弹窗**、小红书/GitHub/LinkedIn 外链。
 * **AI 数字人视频（Hero）**：使用AI agent制作数字人形象,用短视频定位自身；提供 mp4/webm + poster，移动端静音自动播放，保证首屏观感。
+
+<img width="1565" height="905" alt="Project" src="https://github.com/user-attachments/assets/412d4877-28ea-42b4-b6e9-ce24e1da2415" />
 
 ---
 
