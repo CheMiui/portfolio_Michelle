@@ -2,7 +2,7 @@
 
 这是 **陈美晖（Michelle Chen）** 的现代化、响应式个人作品集网站，面向校招与初入职场的 **售前 / 云解决方案 / 产品-运营** 岗位。网站聚焦「真实项目复盘 + 可落地方案表达」，强调把技术转成业务语言与可量化指标。
 
-**在线访问（Live Demo）**：[https://CheMiui.github.io/]([https://CheMiui.github.io/](https://chemiui.github.io/portfolio_Michelle/))
+**在线访问（Live Demo）**：(https://chemiui.github.io/portfolio_Michelle/)
 （建议在此处放一张首页截图与一张 Projects 区截图）
 
 ---
