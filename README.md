@@ -17,6 +17,8 @@
 * **数据驱动**：过程尽量留痕，结果尽量量化（TCO、SLA、转化、复购等指标）。
 * **解决方案思维**：不堆技术名词，专注“为什么选它”“怎么权衡”“值不值得”。
 <img width="1549" height="772" alt="skills" src="https://github.com/user-attachments/assets/5de7a5c3-8fa7-496f-a8d3-47a7e459bd47" />
+<img width="1561" height="779" alt="image" src="https://github.com/user-attachments/assets/e85601e9-1969-4b73-8b16-3f29f02c8dbf" />
+
 
 
 ---
