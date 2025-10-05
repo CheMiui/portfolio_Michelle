@@ -1,4 +1,3 @@
-# portfolio_Michelle
 # Michelle Chen - 个人作品集网站
 
 [cite_start]这是为 **陈美晖 (Michelle Chen)** [cite: 1] 打造的一款现代化、响应式的个人作品集网站，旨在全面展示其作为一名**售前与云解决方案工程师**的专业技能、项目经验和个人特质。
