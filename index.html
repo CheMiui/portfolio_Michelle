@@ -134,12 +134,13 @@ nav{
 }
 .section-sub{font-size:14px;color:var(--ink2);margin-bottom:40px;}
 .about-grid{
-  display:grid;grid-template-columns:260px 1fr 180px;
+  display:grid;grid-template-columns:320px 1fr 220px;
   gap:40px;align-items:start;
 }
 .about-photo{
   width:100%;aspect-ratio:3/4;object-fit:cover;
   border-radius:16px;border:1px solid var(--border);
+  margin-left:-24px;display:block;
 }
 .about-mid{}
 .about-text{font-size:15px;color:var(--ink2);line-height:1.85;margin-bottom:16px;}
@@ -156,14 +157,14 @@ nav{
 .edu-item h4{font-family:'Lora',serif;font-size:15px;font-weight:600;margin-bottom:4px;}
 .edu-date{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink3);margin-bottom:4px;}
 .edu-item p{font-size:13px;color:var(--ink2);line-height:1.6;}
-.about-stats{display:flex;flex-direction:column;gap:12px;}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .stat-card{
   background:var(--surf);border:1px solid var(--border);
-  border-radius:12px;padding:20px;text-align:center;
+  border-radius:12px;padding:18px 12px;text-align:center;
   box-shadow:0 1px 3px rgba(0,0,0,0.06);
 }
-.stat-num{font-family:'Lora',serif;font-size:36px;font-weight:600;color:#3D7FA3;}
-.stat-label{font-size:12px;color:var(--ink3);margin-top:4px;}
+.stat-num{font-family:'Lora',serif;font-size:32px;font-weight:600;color:#3D7FA3;line-height:1;}
+.stat-label{font-size:11px;color:var(--ink3);margin-top:4px;}
 
 /* ===SKILLS=== */
 #skills{
@@ -487,8 +488,9 @@ footer{
         <img src="images/picture.JPG" class="about-photo" alt="Michelle Chen">
       </div>
       <div class="about-mid">
-        <p class="about-text">我把自己定位为一名兼具商业思维与技术实践能力的复合型人才，拥有管理学士学位和世界前百强校西澳大学的信息技术硕士学位（均分Distinction）。我擅长扮演连接商业需求与技术实现的"桥梁"角色。在惠普（HPE）的解决方案顾问实习中，我将这种复合能力应用于实践，通过深度分析客户痛点，设计出可为金融客户降低超20%TCO的超融合解决方案。</p>
-        <p class="about-text">我的实战能力源于从0到1独立负责的两个商业项目，在项目中我展现了强大的创新精神与自驱力。我曾通过优化服务流程将客户转化率提升30%以上，也曾利用API自动化将订单处理效率提升三倍以上，充分验证了我在数据驱动运营与技术问题解决上的综合能力。我相信，这种解决复杂问题的热情，结合流利的英语沟通能力，使我能够胜任任何需要深度理解业务并以技术驱动创新的挑战性岗位，为企业创造切实的商业价值。</p>
+        <p class="about-text">商业管理与计算机科学的双重背景，让我天然具备技术深度与商业敏锐度的融合视角。我热衷于通过系统化思维与数据驱动解决真实业务挑战，始终扮演"技术与业务翻译官"的角色——将底层技术逻辑转化为可量化的商业价值。</p>
+        <p class="about-text">项目经验横跨 AI 落地、云基础架构与商业化变现三大领域。在百度智能云担任解决方案工程师实习生期间，主导企业级 AIGC 自动化工作流 Agent 的从0到1搭建，深入泛科技与文娱行业完成 B 端商业化落地；在惠普 HPE 的售前实习项目中，精准剖析金融客户运维痛点，量身定制混合云架构与供应链容量规划方案；此外，独立主导从市场洞察、系统设计到自动化交付体系构建的电商创业闭环。</p>
+        <p class="about-text">核心专长聚焦于端到端解决方案架构设计与售前全流程管理：精通将大模型工作流、混合云等复杂技术转化为直击业务痛点的商业落地架构；具备扎实的数据驱动思维，熟练运用 SQL 进行业务复盘与 ROI 测算；凭借 PTE 74 的英语水平与跨文化沟通经验，可在全英文环境中无障碍推进技术研讨，并对 AI 前沿技术保持极强的学习与落地能力。</p>
         <div class="tabs">
           <button class="tab active" onclick="switchTab(0)">教育背景</button>
           <button class="tab" onclick="switchTab(1)">证书认证</button>
@@ -532,6 +534,18 @@ footer{
         <div class="stat-card">
           <div class="stat-num">10+</div>
           <div class="stat-label">获奖证书</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">5</div>
+          <div class="stat-label">完整项目</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3+</div>
+          <div class="stat-label">覆盖行业</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" style="font-size:22px">PTE 74</div>
+          <div class="stat-label">英语水平</div>
         </div>
       </div>
     </div>
