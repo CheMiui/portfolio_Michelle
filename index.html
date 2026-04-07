@@ -82,7 +82,9 @@ nav{
   display:flex;align-items:center;gap:48px;
 }
 .hero-avatar{
-  width:170px;height:170px;border-radius:50%;overflow:hidden;
+  width: 260px;   
+  height: 260px;  /* 保持和 width 一致 */
+  border-radius:50%;overflow:hidden;
   border:3px solid var(--border);
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
   flex-shrink:0;
@@ -134,8 +136,10 @@ nav{
 }
 .section-sub{font-size:14px;color:var(--ink2);margin-bottom:40px;}
 .about-grid{
-  display:grid;grid-template-columns:380px 1fr 200px;
-  gap:32px;align-items:start;
+  display:grid;
+  grid-template-columns:380px 1fr 260px; /* 把最后的 200px 改成 260px */
+  gap:32px;
+  align-items:start;
 }
 .about-photo{
   width:100%;aspect-ratio:2/3;object-fit:cover;object-position:center top;
@@ -158,11 +162,18 @@ nav{
 .edu-item h4{font-family:'Lora',serif;font-size:15px;font-weight:600;margin-bottom:4px;}
 .edu-date{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink3);margin-bottom:4px;}
 .edu-item p{font-size:13px;color:var(--ink2);line-height:1.6;}
-.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start;}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:start;}
 .stat-card{
-  background:var(--surf);border:1px solid var(--border);
-  border-radius:14px;padding:22px 14px;text-align:center;
+  background:var(--surf);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:32px 14px; /* 上下 padding 从 22px 加大到 32px，卡片直接变高 */
+  text-align:center;
   box-shadow:0 1px 3px rgba(0,0,0,0.06);
+  display:flex;             /* 新增：开启 flex 布局 */
+  flex-direction:column;    /* 新增：垂直排列 */
+  justify-content:center;   /* 新增：内容垂直绝对居中 */
+  align-items:center;       /* 新增：内容水平绝对居中 */
 }
 .stat-num{font-family:'Lora',serif;font-size:34px;font-weight:600;color:#3D7FA3;line-height:1;}
 .stat-label{font-size:11px;color:var(--ink3);margin-top:5px;}
@@ -458,7 +469,7 @@ footer{
       <p class="hero-sub">将复杂技术方案转化为可衡量的商业价值。深度参与百度智能云AI解决方案落地，以售前视角连接技术与业务。</p>
       <div class="hero-stats">
         <div class="hero-stat">
-          <span class="hero-stat-num">4</span>
+          <span class="hero-stat-num">5</span>
           <span class="hero-stat-label">个核心项目</span>
         </div>
         <div class="hero-stat">
@@ -489,9 +500,9 @@ footer{
         <img src="images/picture.JPG" class="about-photo" alt="Michelle Chen">
       </div>
       <div class="about-mid">
-        <p class="about-text">商业管理与计算机科学的双重背景，让我天然具备技术深度与商业敏锐度的融合视角。我热衷于通过系统化思维与数据驱动解决真实业务挑战，始终扮演"技术与业务翻译官"的角色——将底层技术逻辑转化为可量化的商业价值。</p>
-        <p class="about-text">项目经验横跨 AI 落地、云基础架构与商业化变现三大领域。在百度智能云担任解决方案工程师实习生期间，主导企业级 AIGC 自动化工作流 Agent 的从0到1搭建，深入泛科技与文娱行业完成 B 端商业化落地；在惠普 HPE 的售前实习项目中，精准剖析金融客户运维痛点，量身定制混合云架构与供应链容量规划方案；此外，独立主导从市场洞察、系统设计到自动化交付体系构建的电商创业闭环。</p>
-        <p class="about-text">核心专长聚焦于端到端解决方案架构设计与售前全流程管理：精通将大模型工作流、混合云等复杂技术转化为直击业务痛点的商业落地架构；具备扎实的数据驱动思维，熟练运用 SQL 进行业务复盘与 ROI 测算；凭借 PTE 74 的英语水平与跨文化沟通经验，可在全英文环境中无障碍推进技术研讨，并对 AI 前沿技术保持极强的学习与落地能力。</p>
+        <p class="about-text">商业管理与计算机科学的双重背景，让我天然具备技术深度与商业敏锐度的融合视角。我热衷于通过系统化思维与数据驱动解决真实业务挑战，始终将底层技术逻辑转化为可量化的商业价值。</p>
+        <p class="about-text">我的项目经验横跨 AI 落地、云架构与商业落地三大领域。在百度担任解决方案实习生期间，主导了AIGC 自动化工作流 Agent 的搭建，深入泛科技与文娱行业完成 B 端商业化落地；在HPE售前实习中，精准剖析金融客户运维痛点，量身定制混合云架构方案；此外，我也独立主导了从市场洞察、系统设计到自动化交付体系构建的电商创业闭环。</p>
+        <p class="about-text">我的核心专长聚焦于解决方案架构设计：精通将大模型、混合云等复杂技术转化为直击业务痛点的商业落地架构；具备扎实的数据驱动思维，熟练数据分析能力；并，可在全英文环境中无障碍交流，并对 AI 前沿技术保持极强的学习与落地能力。</p>
         <div class="tabs">
           <button class="tab active" onclick="switchTab(0)">教育背景</button>
           <button class="tab" onclick="switchTab(1)">证书认证</button>
@@ -529,7 +540,7 @@ footer{
           <div class="stat-label">GPA Distinction</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">4</div>
+          <div class="stat-num">5</div>
           <div class="stat-label">核心项目</div>
         </div>
         <div class="stat-card">
@@ -537,7 +548,7 @@ footer{
           <div class="stat-label">获奖证书</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">5</div>
+          <div class="stat-num">20+</div>
           <div class="stat-label">完整项目</div>
         </div>
         <div class="stat-card">
@@ -545,7 +556,7 @@ footer{
           <div class="stat-label">覆盖行业</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num" style="font-size:20px">PTE 74</div>
+          <div class="stat-num" style="font-size:24px">雅思 7</div>
           <div class="stat-label">英语水平</div>
         </div>
       </div>
