@@ -6,7 +6,9 @@
 >
 >  **在线访问 (Live Demo)**：[https://chemiui.github.io/portfolio_Michelle/](https://chemiui.github.io/portfolio_Michelle/)
 >
-> ![网站首屏预览]![截屏2026-04-07 下午8.21.34](/Users/michellechen/Desktop/截屏2026-04-07 下午8.21.34.png)
+> ![网站首屏预览]!
+> <img width="1219" height="590" alt="截屏2026-04-07 下午8 21 34" src="https://github.com/user-attachments/assets/98923532-4b92-4a1a-857c-c36b6f909265" />
+
 >
 > ---
 >
