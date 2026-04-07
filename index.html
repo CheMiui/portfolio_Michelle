@@ -123,7 +123,7 @@ nav{
 
 /* ===ABOUT=== */
 #about{background:var(--surf);}
-.about-inner{max-width:1000px;margin:0 auto;padding:96px 48px;}
+.about-inner{max-width:1100px;margin:0 auto;padding:80px 32px 80px 24px;}
 .section-tag{
   font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;
   color:var(--ink3);margin-bottom:8px;
@@ -134,17 +134,18 @@ nav{
 }
 .section-sub{font-size:14px;color:var(--ink2);margin-bottom:40px;}
 .about-grid{
-  display:grid;grid-template-columns:320px 1fr 220px;
-  gap:40px;align-items:start;
+  display:grid;grid-template-columns:380px 1fr 200px;
+  gap:32px;align-items:start;
 }
 .about-photo{
-  width:100%;aspect-ratio:3/4;object-fit:cover;
-  border-radius:16px;border:1px solid var(--border);
-  margin-left:-24px;display:block;
+  width:100%;aspect-ratio:2/3;object-fit:cover;object-position:center top;
+  border-radius:16px;margin-left:-32px;display:block;
+  box-shadow:0 4px 16px rgba(0,0,0,0.10);
 }
+.about-left{margin-left:-16px;}
 .about-mid{}
-.about-text{font-size:15px;color:var(--ink2);line-height:1.85;margin-bottom:16px;}
-.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:20px;margin-top:24px;}
+.about-text{font-size:15px;color:var(--ink2);line-height:1.9;margin-bottom:20px;}
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:20px;margin-top:32px;}
 .tab{
   background:none;border:none;font-family:'Outfit',sans-serif;font-size:13px;
   font-weight:500;color:var(--ink3);padding:10px 20px 10px 0;cursor:pointer;
@@ -157,14 +158,14 @@ nav{
 .edu-item h4{font-family:'Lora',serif;font-size:15px;font-weight:600;margin-bottom:4px;}
 .edu-date{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink3);margin-bottom:4px;}
 .edu-item p{font-size:13px;color:var(--ink2);line-height:1.6;}
-.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start;}
 .stat-card{
   background:var(--surf);border:1px solid var(--border);
-  border-radius:12px;padding:18px 12px;text-align:center;
+  border-radius:14px;padding:22px 14px;text-align:center;
   box-shadow:0 1px 3px rgba(0,0,0,0.06);
 }
-.stat-num{font-family:'Lora',serif;font-size:32px;font-weight:600;color:#3D7FA3;line-height:1;}
-.stat-label{font-size:11px;color:var(--ink3);margin-top:4px;}
+.stat-num{font-family:'Lora',serif;font-size:34px;font-weight:600;color:#3D7FA3;line-height:1;}
+.stat-label{font-size:11px;color:var(--ink3);margin-top:5px;}
 
 /* ===SKILLS=== */
 #skills{
@@ -484,7 +485,7 @@ footer{
     <h2 class="section-title">关于我</h2>
     <p class="section-sub">技术与商业之间的翻译官</p>
     <div class="about-grid">
-      <div>
+      <div class="about-left">
         <img src="images/picture.JPG" class="about-photo" alt="Michelle Chen">
       </div>
       <div class="about-mid">
@@ -544,7 +545,7 @@ footer{
           <div class="stat-label">覆盖行业</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num" style="font-size:22px">PTE 74</div>
+          <div class="stat-num" style="font-size:20px">PTE 74</div>
           <div class="stat-label">英语水平</div>
         </div>
       </div>
