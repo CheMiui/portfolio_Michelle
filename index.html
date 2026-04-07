@@ -4,1062 +4,922 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Michelle Chen | Pre-Sales & Cloud Solution Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 
-  :root {
-    --primary: #581CA0;
-    --primary-light: #8B5CF6;
-    --primary-dark: #371C9C;
-  }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', '微软雅黑', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', sans-serif;
-    overflow-x: hidden;
-    transition: background 0.4s, color 0.4s;
-  }
-
-  body.en-mode { font-family: Calibri, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-
-  h1, h2, h3, h4, .hero-title-main, .section-title, .project-title, .timeline-company, .insight-title {
-    font-family: 'Microsoft YaHei', '微软雅黑', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'Source Han Sans CN', sans-serif;
-  }
-
-  body.en-mode h1, body.en-mode h2, body.en-mode h3, body.en-mode h4, body.en-mode .hero-title-main, body.en-mode .section-title, body.en-mode .project-title, body.en-mode .timeline-company, body.en-mode .insight-title {
-    font-family: Calibri, 'Segoe UI', 'Trebuchet MS', sans-serif;
-  }
-
-  .stat-number { font-family: 'Space Grotesk', Calibri, 'Segoe UI', monospace; }
-
-  /* --- THEME & GLASSMORPHISM STYLES --- */
-  body.light-theme {
-    --bg-main: #FDFBFF;
-    --bg-alt: #F8F7FF;
-    --text-primary: #1A1A1A;
-    --text-secondary: #555555;
-    --card-bg: rgba(255, 255, 255, 0.65);
-    --border-color: rgba(139, 92, 246, 0.15);
-    --icon-color: var(--primary-light);
-    background: #FDFBFF;
-    color: #1A1A1A;
-  }
-
-  body.dark-theme {
-    --bg-main: #0F0525;
-    --bg-alt: #1A0F3F;
-    --text-primary: #E9E6F5;
-    --text-secondary: #AAAAAA;
-    --card-bg: rgba(26, 15, 63, 0.55);
-    --border-color: rgba(139, 92, 246, 0.25);
-    --icon-color: #8B5CF6;
-    background: #0F0525;
-    color: #E9E6F5;
-  }
-  
-  body.dark-theme .skill-icon img,
-  body.dark-theme .timeline-icon img,
-  body.dark-theme .timeline-icon svg {
-    filter: brightness(0) invert(1);
-    opacity: 0.8;
-  }
-  
-  body.dark-theme .timeline-item:hover .timeline-icon img,
-  body.dark-theme .timeline-item:hover .timeline-icon svg {
-    filter: none;
-    opacity: 1;
-  }
-
-
-  /* Glassmorphism Card Base Style */
-  .glass-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 24px; /* 2xl */
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .glass-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 40px 0 rgba(139, 92, 246, 0.2);
-    border-color: var(--primary-light);
-  }
-
-  /* Navigation */
-  nav {
-    position: fixed; top: 0; width: 100%; z-index: 1000;
-    padding: 1.5rem 6%;
-    display: flex; justify-content: space-between; align-items: center;
-    border-bottom: 1px solid var(--border-color);
-    transition: all 0.3s;
-    background: var(--card-bg);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-  }
-  nav.scrolled {
-    padding: 1rem 6%;
-    box-shadow: 0 4px 30px rgba(88, 28, 160, 0.1);
-  }
-  .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--primary), var(--primary-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; cursor: pointer; }
-  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
-  .nav-links a { text-decoration: none; color: var(--text-primary); font-weight: 500; position: relative; transition: color 0.3s; }
-  .nav-links a:hover { color: var(--primary); }
-  .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, var(--primary), var(--primary-light)); transition: width 0.3s; }
-  .nav-links a:hover::after { width: 100%; }
-  .nav-controls { display: flex; gap: 1rem; align-items: center; }
-  .theme-toggle, .lang-toggle { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--primary); background: transparent; color: var(--primary); font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
-  .theme-toggle:hover, .lang-toggle:hover { background: var(--primary); color: white; }
-
-  /* Hero Section */
-  .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 6% 4rem; background: var(--bg-main); }
-  .hero-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 420px; gap: 4rem; align-items: center; }
-  .hero-content { animation: fadeIn 0.8s 0.2s forwards; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  .hero-content h1 { font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 0.5rem; color: var(--text-primary); }
-  .gradient-text { background: linear-gradient(135deg, var(--primary), var(--primary-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .hero-title-main { font-size: 4.5rem; }
-  .typewriter { display: inline-block; border-right: 4px solid var(--primary-light); white-space: nowrap; overflow: hidden; animation: typing 3.5s steps(30, end), blink .75s step-end infinite; }
-  @keyframes typing { from { width: 0 } to { width: 100% } }
-  @keyframes blink { from, to { border-color: transparent } 50% { border-color: var(--primary-light); } }
-  .hero-subtitle { font-size: 1.5rem; color: var(--primary); font-weight: 600; margin-bottom: 1.5rem; }
-  .hero-description { font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 600px; }
-  .hero-buttons { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-  .btn { padding: 1rem 2.5rem; border-radius: 999px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s; border: 2px solid transparent; }
-  .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3); }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5); }
-  .btn-ghost { border-color: var(--primary); color: var(--primary); }
-  .btn-ghost:hover { background: var(--primary); color: white; }
-  .hero-avatar { width: 420px; height: 420px; border-radius: 50%; overflow: hidden; border: 3px solid var(--border-color); box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2); display: flex; align-items: center; justify-content: center; animation: float 6s ease-in-out infinite; }
-  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-  .hero-avatar img { width: 100%; height: 100%; object-fit: cover; }
-
-  /* Sections & Headers & Animations */
-  section { padding: 6rem 6%; }
-  .section-header, .skill-card, .project-card, .timeline-item, .insight-card, .about-image, .about-main {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s cubic-bezier(0.215, 0.610, 0.355, 1), transform 0.6s cubic-bezier(0.215, 0.610, 0.355, 1);
-  }
-  .section-header.visible, .skill-card.visible, .project-card.visible, .timeline-item.visible, .insight-card.visible, .about-image.visible, .about-main.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .section-header { text-align: center; margin-bottom: 4rem; transition-delay: 0s; }
-  .section-title { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; }
-  .section-subtitle { font-size: 1.1rem; color: var(--text-secondary); }
-
-  /* --- About Section (Re-structured) --- */
-  .about { background: var(--bg-alt); }
-  .about-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 400px 1fr; gap: 4rem; align-items: start; }
-  .about-image { width: 100%; aspect-ratio: 1; border-radius: 24px; overflow: hidden; border: 3px solid var(--border-color); box-shadow: 0 25px 70px rgba(139, 92, 246, 0.15); }
-  .about-image img { width: 100%; height: 100%; object-fit: cover; }
-  .about-main { display: grid; grid-template-columns: 1fr 280px; gap: 2rem; align-items: start; }
-  .about-content { padding: 2rem; }
-  .about-text { font-size: 1.05rem; line-height: 1.9; color: var(--text-secondary); margin-bottom: 1.5rem; }
-  .tabs { display: flex; gap: 1rem; margin-top: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--border-color); }
-  .tab { padding: 0.8rem 0; margin-right: 1.5rem; background: transparent; border: none; color: var(--text-secondary); font-size: 1rem; font-weight: 600; cursor: pointer; position: relative; transition: color 0.3s; }
-  .tab.active { color: var(--primary-light); }
-  .tab.active::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--primary), var(--primary-light)); }
-  .tab-content { display: none; }
-  .tab-content.active { display: block; animation: contentFadeIn 0.5s; }
-  @keyframes contentFadeIn { from { opacity: 0; } to { opacity: 1; } }
-  .education-item { margin-bottom: 1.5rem; }
-  .education-item:last-child { margin-bottom: 0; }
-  .education-item h4 { font-size: 1.2rem; color: var(--text-primary); margin-bottom: 0.3rem; }
-  .education-item .date { color: var(--primary-light); font-size: 0.9rem; margin-bottom: 0.5rem; display: block; }
-  .education-item p { color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; }
-  .stats { display: flex; flex-direction: column; gap: 1.5rem; }
-  .stat-card { padding: 2rem 1.5rem; text-align: center; }
-  .stat-number { font-size: 4rem; font-weight: 800; background: linear-gradient(135deg, #8B5CF6, #C084FC); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; line-height: 1; }
-  .stat-label { font-size: 1rem; color: var(--text-secondary); font-weight: 500; }
-
-  /* Skills Section */
-  .skills { background: var(--bg-main); }
-  .skills-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5rem; }
-  .skill-card { padding: 2rem 1rem; text-align: center; }
-  .skill-icon { width: 64px; height: 64px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-  .skill-icon img, .skill-icon svg { height: 48px; width: 48px; }
-  .skill-card:hover .skill-icon { transform: scale(1.15) rotate(10deg); }
-  .skill-name { font-weight: 700; color: var(--text-primary); margin-bottom: 0.3rem; }
-  .skill-category { font-size: 0.85rem; color: var(--text-secondary); }
-
-  /* Projects Section */
-  .projects { background: var(--bg-alt); }
-  .project-filters { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
-  .filter-btn { padding: 0.8rem 2rem; background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 999px; color: var(--text-secondary); font-weight: 600; cursor: pointer; transition: all 0.3s; }
-  .filter-btn.active, .filter-btn:hover { background: var(--primary); border-color: var(--primary); color: white; box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4); }
-  .projects-grid { max-width: 1400px; margin: 0 auto; display: grid; gap: 3rem; }
-  .project-card { display: grid; grid-template-columns: 450px 1fr; overflow: hidden; min-height: 350px; }
-  .project-image { width: 100%; height: 100%; overflow: hidden; position: relative; }
-  .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-  .project-card:hover .project-image img { transform: scale(1.05); }
-  .project-content { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
-  .project-title { font-size: 1.9rem; font-weight: 800; margin-bottom: 1.2rem; color: var(--text-primary); line-height: 1.3; }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.3rem; }
-  .tag { padding: 0.5rem 1.2rem; background: rgba(139, 92, 246, 0.12); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 999px; font-size: 0.85rem; color: var(--primary-light); font-weight: 500; }
-  .project-description { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.8rem; font-size: 1.02rem; }
-  .project-links { display: flex; gap: 1rem; }
-  .project-link { padding: 0.8rem 1.8rem; border: 2px solid var(--primary); border-radius: 999px; color: var(--primary-light); text-decoration: none; font-weight: 600; transition: all 0.3s; }
-  .project-link:hover { background: var(--primary); color: white; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4); }
-
-  /* Insights Section */
-  .insights { background: var(--bg-main); }
-  .insights-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
-  .insight-card { padding: 3rem; }
-  .insight-title { font-size: 1.4rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1rem; line-height: 1.4; }
-  .insight-subtitle { font-size: 0.9rem; color: var(--primary); font-weight: 600; margin-bottom: 1.2rem; }
-  .insight-text { font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary); white-space: pre-line; }
-
-  /* Experience Section (Timeline Card Style) */
-  .experience { background: var(--bg-alt); }
-  .timeline { max-width: 1000px; margin: 0 auto; position: relative; }
-  .timeline::before { content: ''; position: absolute; left: 30px; top: 0; width: 2px; height: 100%; background: var(--border-color); }
-  .timeline-item { display: grid; grid-template-columns: 60px 1fr; gap: 2rem; align-items: start; margin-bottom: 2.5rem; position: relative; }
-  .timeline-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--bg-main); border: 2px solid var(--primary); display: grid; place-items: center; font-size: 1.5rem; margin: 8px auto 0; position: relative; z-index: 1; transition: all 0.3s; }
-  .timeline-icon img, .timeline-icon svg { height: 24px; fill: var(--icon-color); }
-  .timeline-item:hover .timeline-icon { transform: scale(1.1); background: var(--primary); color: white; }
-  .timeline-item:hover .timeline-icon img, .timeline-item:hover .timeline-icon svg { filter: brightness(0) invert(1); }
-  .timeline-card { padding: 2rem; }
-  .timeline-header { margin-bottom: 0.5rem; }
-  .timeline-company { font-size: 1.3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.3rem; }
-  .timeline-role { font-size: 1.05rem; color: var(--primary); font-weight: 600; }
-  .timeline-date { font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.2rem; }
-  .timeline-content { color: var(--text-secondary); line-height: 1.8; font-size: 1rem; }
-  .more-experience { margin-top: 2rem; text-align: center; }
-  .expand-btn { padding: 0.8rem 2rem; border: 2px solid var(--primary); border-radius: 999px; background: transparent; color: var(--primary); font-weight: 600; cursor: pointer; transition: all 0.3s; }
-  .expand-btn:hover { background: var(--primary); color: white; }
-  .hidden-experience { max-height: 0; overflow: hidden; transition: max-height 0.7s ease-in-out; }
-  .hidden-experience.expanded { max-height: 2000px; }
-
-/* Contact Section */
-.contact { background: var(--bg-main); }
-.contact-container{
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; padding: 4rem;
-}
-.contact-info h2{ font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; }
-.contact-info p{ color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem; }
-.contact-social{ display:flex; gap:1rem; margin-bottom:2rem; }
-
-/* 圆形按钮外观（a/button 共用） */
-.contact-icon{
-  width:52px; height:52px; border-radius:50%;
-  background: rgba(139,92,246,.10);
-  border:2px solid var(--primary);
-  color:var(--primary);
-  display:flex; align-items:center; justify-content:center;
-  transition: all .3s;
-  overflow:hidden; cursor:pointer;
-}
-/* 纯图片图标（GitHub/LinkedIn/Email） */
-.contact-icon .icon{ width:28px; height:28px; display:block; }
-
-/* 可变色图标（WeChat/RED：用 mask）——注意：与上面 <img> 不冲突 */
-.icon-mask{
-  width:28px; height:28px; display:block; background-color: currentColor;
-  -webkit-mask: var(--src) no-repeat center/contain;
-          mask: var(--src) no-repeat center/contain;
-}
-
-/* 通用 hover 效果（默认紫色方案） */
-.contact-icon:hover{
-  transform: translateY(-5px);
-  background: var(--primary); color:#fff;
-  box-shadow: 0 10px 30px rgba(139,92,246,.5);
-}
-
-
-/* —— 卡片主题变量（亮/暗） —— */
 :root{
-  --card-bg: rgba(255,255,255,.92);   /* 亮主题卡片背景（更实） */
-  --card-fg: #1A0F3F;                 /* 亮主题文字色 */
+  --bg:#F7F4EF;--bg2:#EDE9E2;--bg3:#E2DDD5;
+  --surf:#FFFFFF;--ink:#1C1917;--ink2:#6B6560;--ink3:#A8A39D;
+  --ac:#3D7FA3;--acl:#E8F2F8;--act:#1F4F6B;
+  --peach:#F5E6DC;--pt:#7A4630;
+  --lav:#EAE6F5;--lt:#4A3875;
+  --border:rgba(28,25,23,0.10);
 }
-.dark-theme{
-  --card-bg: rgba(26,15,63,.92);      /* 暗主题卡片背景（更实） */
-  --card-fg: #EDEAF7;                 /* 暗主题文字色 */
-}
-
-/* —— 两类弹窗（二维码 / 邮箱）统一规则 —— */
-.qr-modal, .email-modal{ position: fixed; inset: 0; display: none; z-index: 1000; }
-.qr-modal.show, .email-modal.show{ display: block; }
-
-/* 背景遮罩（更暗一点，降低干扰） */
-.qr-backdrop{
-  position:absolute; inset:0;
-  background: rgba(26,15,63,.55);
-  backdrop-filter: blur(3px) saturate(110%);
-  -webkit-backdrop-filter: blur(3px) saturate(110%);
+.dark-mode{
+  --bg:#100F0D;--bg2:#181612;--bg3:#211F1A;
+  --surf:#181612;--ink:#F0EDE8;--ink2:#8A857E;--ink3:#55524C;
+  --ac:#5BA3CC;--acl:#0D2030;--act:#8FC8E8;
+  --peach:#3A1F13;--pt:#E8A882;
+  --lav:#1A1530;--lt:#B8A8E8;
+  --border:rgba(240,237,232,0.08);
 }
 
-/* 卡片容器（二维码/邮箱共用） */
-.qr-card, .email-card{
-  position: relative;
-  width: min(92vw, 520px);
-  margin: 9vh auto 0;
-  padding: 22px 22px 18px;
-  border-radius: 22px;
-  background: var(--card-bg);
-  color: var(--card-fg);
-  border: 1px solid rgba(0,0,0,.06);
-  box-shadow: 0 24px 60px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.18);
-  animation: card-pop .24s ease-out both;
-}
-@keyframes card-pop{
-  from{ transform: translateY(8px) scale(.98); opacity: .6; }
-  to  { transform: translateY(0)  scale(1);   opacity: 1; }
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  overflow-x:hidden;
+  transition:background 0.3s,color 0.3s;
 }
 
-/* 标题与关闭 */
-.qr-card h3, .email-card h3{
-  margin: 0 0 12px;
-  font-size: 1.25rem; font-weight: 800;
-  color: var(--primary);
+/* ===NAV=== */
+nav{
+  position:sticky;top:0;z-index:10;
+  background:var(--surf);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;height:60px;
+  transition:background 0.3s;
 }
-.qr-close{
-  position: absolute; top: 10px; right: 12px;
-  width: 32px; height: 32px; line-height: 30px; text-align: center;
-  border-radius: 50%;
-  background: rgba(0,0,0,.06); border: 1px solid rgba(0,0,0,.06);
-  color: var(--card-fg); cursor: pointer;
-  transition: transform .15s ease, background .2s ease, box-shadow .2s ease;
+.nav-logo{
+  font-family:'Lora',serif;font-size:20px;font-weight:600;
+  color:var(--ink);text-decoration:none;letter-spacing:-0.5px;
 }
-.qr-close:hover{ transform: scale(1.07); background: rgba(0,0,0,.10); box-shadow: 0 6px 16px rgba(0,0,0,.18); }
+.nav-logo span{color:var(--ac);}
+.nav-links{display:flex;gap:0;list-style:none;}
+.nav-links a{
+  font-size:13px;font-weight:500;color:var(--ink2);
+  text-decoration:none;padding:0 16px;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--ac);}
+.nav-links li:not(:last-child) a::after{content:'|';margin-left:16px;color:var(--border);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-btn{
+  background:none;border:1.5px solid var(--border);border-radius:20px;
+  padding:6px 14px;font-size:13px;color:var(--ink2);cursor:pointer;
+  transition:border-color 0.2s,color 0.2s;font-family:'Outfit',sans-serif;
+}
+.theme-btn:hover{border-color:var(--ac);color:var(--ac);}
+.contact-btn{
+  background:var(--ac);color:#fff;border:none;border-radius:20px;
+  padding:7px 18px;font-size:13px;font-weight:500;cursor:pointer;
+  text-decoration:none;font-family:'Outfit',sans-serif;
+  transition:opacity 0.2s;
+}
+.contact-btn:hover{opacity:0.88;}
 
-/* —— 二维码专属 —— */
-#qrImg{
-  display:block; width: 80%; max-width: 360px; margin: 10px auto 14px;
-  background:#fff; border-radius:14px;
-  box-shadow: 0 14px 34px rgba(0,0,0,.28);
+/* ===HERO=== */
+#hero{
+  display:grid;grid-template-columns:1fr 360px;
+  min-height:calc(100vh - 60px);
+  background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:44px 44px;background-color:var(--surf);
 }
-.qr-id{
-  display:flex; align-items:center; justify-content:center;
-  gap: 10px; margin: 10px 0 0;
+.hero-left{padding:72px 48px;display:flex;flex-direction:column;justify-content:center;gap:24px;}
+.hero-badge{
+  display:inline-flex;align-items:center;
+  background:var(--acl);color:var(--act);
+  font-family:'DM Mono',monospace;font-size:11px;
+  padding:6px 16px;border-radius:20px;width:fit-content;
 }
-#qrIdText{
-  padding: 8px 14px; border-radius: 999px;
-  background: rgba(139,92,246,.14);
-  color: var(--card-fg);
-  border: 1px solid rgba(139,92,246,.35);
-  font-weight: 700;
+.hero-title{font-family:'Lora',serif;line-height:1.1;font-size:clamp(44px,6vw,80px);}
+.hero-title .line1{display:block;font-weight:600;}
+.hero-title .line2{display:block;font-style:italic;color:var(--ac);font-weight:600;}
+.hero-title .line3{display:block;font-weight:400;font-size:0.6em;color:var(--ink2);}
+.hero-sub{font-size:15px;color:var(--ink2);line-height:1.7;max-width:520px;font-weight:400;}
+.hero-stats{display:flex;gap:32px;}
+.hero-stat{display:flex;flex-direction:column;gap:4px;}
+.hero-stat-num{font-family:'Lora',serif;font-size:30px;font-weight:600;color:var(--ink);}
+.hero-stat-label{font-size:11px;color:var(--ink3);font-weight:500;}
+.hero-btns{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--ac);color:#fff;border:none;border-radius:8px;
+  padding:12px 24px;font-size:14px;font-weight:500;cursor:pointer;
+  text-decoration:none;font-family:'Outfit',sans-serif;
+  transition:opacity 0.2s;
 }
-.qr-copy{
-  padding: 8px 14px; border-radius: 999px;
-  background: transparent;
-  border: 1.5px solid var(--primary);
-  color: var(--primary);
-  font-weight: 700; cursor: pointer;
-  transition: .22s ease;
+.btn-primary:hover{opacity:0.88;}
+.btn-outline{
+  background:transparent;color:var(--ink);
+  border:1.5px solid var(--border);border-radius:8px;
+  padding:11px 24px;font-size:14px;font-weight:500;cursor:pointer;
+  text-decoration:none;font-family:'Outfit',sans-serif;
+  transition:border-color 0.2s,color 0.2s;
 }
-.qr-copy:hover, .qr-copy.copied{
-  background: var(--primary); color:#fff; border-color: var(--primary);
-}
-.qr-tip{ font-size:.95rem; margin-top:8px; color: var(--card-fg); }
+.btn-outline:hover{border-color:var(--ac);color:var(--ac);}
 
-/* —— 邮箱列表弹窗 —— */
-.email-card{ padding-top: 20px; }
-.email-list{
-  list-style:none; padding:0; margin:12px 0 6px;
-  display:flex; flex-direction:column; gap:12px;
+.hero-right{
+  background:var(--bg2);
+  border-left:1px solid var(--border);
+  padding:24px;
+  display:flex;flex-direction:column;gap:12px;
 }
-.email-item{
-  display:flex; align-items:center; justify-content:space-between; gap:14px;
-  padding:12px 14px;
-  border-radius:16px;
-  background: var(--card-bg);
-  color: var(--card-fg);
-  border: 1px solid rgba(0,0,0,.06);
-  box-shadow: 0 12px 28px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.12);
-  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
-}
-.email-item:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 20px 44px rgba(0,0,0,.24);
-  border-color: rgba(139,92,246,.35);
-}
-.email-text{ 
-  color: var(--card-fg);
-  font-weight: 800; letter-spacing: .2px; text-decoration:none; overflow-wrap:anywhere;
-}
-.email-copy{
-  padding: 8px 14px; border-radius: 999px;
-  background: transparent;
-  border: 1.5px solid var(--primary);
-  color: var(--primary);
-  font-weight: 800; cursor: pointer;
-  transition: .22s ease;
-}
-.email-copy:hover, .email-copy.copied{
-  background: var(--primary); color:#fff; border-color: var(--primary);
-}
+.hero-video-slot{flex:1.3;overflow:hidden;border-radius:12px;}
+.hero-video-slot video{width:100%;height:100%;object-fit:cover;border-radius:12px;}
+.hero-img-slot{flex:0.7;overflow:hidden;border-radius:12px;}
+.hero-img-slot img{width:100%;height:100%;object-fit:cover;border-radius:12px;}
 
-/* —— 表单保留 —— */
-.contact-form{ display:flex; flex-direction:column; gap:1.5rem; }
-.form-group{ display:flex; flex-direction:column; gap:.5rem; }
-.form-group label{ font-weight:600; color:var(--text-primary); font-size:.95rem; }
-.form-group input, .form-group textarea{
-  padding:1rem 1.5rem; background:var(--bg-alt); border:2px solid var(--border-color);
-  border-radius:16px; color:var(--text-primary); font-size:1rem; font-family:'Inter',sans-serif;
-  transition:all .3s;
+/* ===ABOUT=== */
+#about{background:var(--surf);padding:72px 48px;}
+.section-tag{
+  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;
+  color:var(--ink3);margin-bottom:8px;
 }
-.form-group input:focus,.form-group textarea:focus{
-  outline:none; border-color:var(--primary-light); box-shadow:0 0 0 4px rgba(139,92,246,.1);
+.section-title{
+  font-family:'Lora',serif;font-size:clamp(28px,4vw,44px);font-weight:600;
+  line-height:1.2;margin-bottom:8px;
 }
-.form-group textarea{ resize:vertical; min-height:150px; }
-.submit-btn{
-  padding:1.2rem 3rem; background:linear-gradient(135deg,var(--primary),var(--primary-light));
-  border:none; border-radius:999px; color:#fff; font-weight:700; font-size:1.05rem; cursor:pointer;
-  transition:all .3s; box-shadow:0 4px 20px rgba(139,92,246,.3);
+.section-sub{font-size:14px;color:var(--ink2);margin-bottom:40px;}
+.about-grid{display:grid;grid-template-columns:280px 1fr 190px;gap:40px;align-items:start;}
+.about-photo{width:100%;aspect-ratio:4/5;border-radius:16px;object-fit:cover;}
+.about-mid{}
+.about-text{font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px;}
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:20px;margin-top:24px;}
+.tab{
+  background:none;border:none;font-family:'Outfit',sans-serif;font-size:13px;
+  font-weight:500;color:var(--ink3);padding:10px 20px 10px 0;cursor:pointer;
+  border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s,border-color 0.2s;
 }
-.submit-btn:hover{ transform:translateY(-3px); box-shadow:0 8px 35px rgba(139,92,246,.5); }
+.tab.active{color:var(--ac);border-bottom-color:var(--ac);}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+.edu-item{margin-bottom:16px;}
+.edu-item h4{font-family:'Lora',serif;font-size:14px;font-weight:600;margin-bottom:4px;}
+.edu-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);margin-bottom:4px;}
+.edu-item p{font-size:12px;color:var(--ink2);line-height:1.6;}
+.about-stats{display:flex;flex-direction:column;gap:12px;}
+.stat-card{
+  background:var(--surf);border:1px solid var(--border);
+  border-radius:10px;padding:18px;text-align:center;
+}
+.stat-num{font-family:'Lora',serif;font-size:32px;font-weight:600;color:var(--ac);}
+.stat-label{font-size:11px;color:var(--ink2);margin-top:4px;}
 
-/* —— Footer(原样) —— */
-footer{ padding:3rem 6%; background:var(--bg-alt); color:var(--text-secondary); text-align:center; border-top:1px solid var(--border-color); }
-
-/* —— 响应式（保持你的断点） —— */
-@media (max-width: 1024px){
-  .hero-container, .contact-container, .insights-grid { grid-template-columns: 1fr; }
-  .about-container { grid-template-columns: 1fr; gap:2rem; }
-  .about-main { grid-template-columns: 1fr; }
-  .stats { flex-direction: row; justify-content: center; }
-  .stat-card { flex: 1; }
-  .hero-avatar, .about-image { margin: 2rem auto 0; width: 300px; height: 300px; }
-  .skills-grid { grid-template-columns: repeat(3, 1fr); }
-  .hero-content { text-align: center; }
-  .hero-buttons { justify-content: center; }
-  .timeline::before { left: 30px; }
-  .timeline-item { grid-template-columns: 60px 1fr; gap: 1.5rem; }
+/* ===SKILLS=== */
+#skills{
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  background:var(--surf);overflow:hidden;
 }
-@media (max-width: 768px){
-  .project-card { grid-template-columns: 1fr; }
-  .project-image { height: 250px; }
+.skill-header{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;
+  color:var(--ink3);background:var(--bg2);padding:9px 48px;
+  border-bottom:1px solid var(--border);
 }
-@media (max-width: 640px){
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero-title-main { font-size: 3.5rem; }
-  h1 { font-size: 3rem; }
-  .section-title { font-size: 2.5rem; }
-  .stats { flex-direction: column; }
+.marquee-wrap{overflow:hidden;}
+.marquee-track{
+  display:flex;white-space:nowrap;
+  animation:mql 32s linear infinite;
 }
+.marquee-track.reverse{
+  animation:mqr 26s linear infinite;
+  background:var(--acl);
+}
+.mq-item{
+  padding:14px 28px;border-right:1px solid var(--border);
+  display:flex;align-items:center;gap:10px;
+  font-size:12px;font-weight:500;flex-shrink:0;
+  color:var(--ink);
+}
+.mq-item.ai-item{color:var(--act);}
+.mq-item img{width:22px;height:22px;object-fit:contain;}
+.ai-icon{
+  width:22px;height:22px;border-radius:5px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;color:#fff;flex-shrink:0;
+}
+@keyframes mql{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes mqr{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
 
-</style>
+/* ===PROJECTS=== */
+#projects{padding:72px 48px;background:var(--bg);}
+.projects-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+}
+.proj-card{
+  display:flex;flex-direction:column;
+  background:var(--surf);border:1px solid var(--border);
+  border-radius:14px;overflow:hidden;
+  transition:transform 0.2s,border-color 0.2s;cursor:pointer;
+}
+.proj-card:hover{transform:translateY(-3px);border-color:var(--ac);}
+.proj-img{
+  height:190px;flex-shrink:0;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.browser-bar{
+  position:absolute;top:0;left:0;right:0;height:26px;
+  background:var(--bg3);display:flex;align-items:center;
+  padding:0 10px;gap:5px;z-index:1;
+}
+.dot{width:8px;height:8px;border-radius:50%;}
+.proj-emoji{font-size:44px;opacity:0.65;margin-top:12px;}
+.proj-label{
+  position:absolute;bottom:8px;font-family:'DM Mono',monospace;
+  font-size:10px;color:var(--ink3);
+}
+.proj-body{padding:22px;flex:1;display:flex;flex-direction:column;}
+.proj-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.ptag{
+  font-family:'DM Mono',monospace;font-size:10px;
+  padding:3px 10px;border-radius:10px;font-weight:500;
+}
+.ptag-blue{background:var(--acl);color:var(--act);}
+.ptag-peach{background:var(--peach);color:var(--pt);}
+.ptag-purple{background:var(--lav);color:var(--lt);}
+.proj-title{font-family:'Lora',serif;font-size:18px;font-weight:600;margin-bottom:8px;}
+.proj-desc{font-size:12px;color:var(--ink2);line-height:1.7;flex:1;}
+.proj-metric{
+  background:var(--bg2);border-radius:8px;padding:12px;margin-top:14px;
+  font-size:12px;font-weight:600;color:var(--ink);
+}
+.proj-link{color:var(--ac);font-weight:600;font-size:13px;margin-top:12px;text-decoration:none;display:inline-block;}
+.proj-link:hover{text-decoration:underline;}
 
+/* ===THOUGHTS=== */
+#thoughts{background:var(--surf);padding:72px 48px;}
+.thoughts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.thought-card{
+  background:var(--surf);border:1px solid var(--border);
+  border-radius:14px;overflow:hidden;
+  transition:transform 0.2s,border-color 0.2s;
+}
+.thought-card:hover{transform:translateY(-2px);border-color:var(--ac);}
+.thought-cover{
+  height:160px;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  font-size:40px;opacity:0.5;
+}
+.thought-cat{
+  position:absolute;bottom:10px;left:12px;
+  font-family:'DM Mono',monospace;font-size:10px;
+  padding:3px 10px;border-radius:10px;opacity:1;
+}
+.thought-body{padding:20px;}
+.thought-time{font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);margin-bottom:8px;}
+.thought-title{font-family:'Lora',serif;font-size:16px;font-weight:600;line-height:1.35;margin-bottom:8px;}
+.thought-sum{font-size:12px;color:var(--ink2);line-height:1.7;}
+.thought-read{font-size:11px;color:var(--ac);font-weight:600;margin-top:12px;display:block;text-decoration:none;}
+.thought-read:hover{text-decoration:underline;}
+
+/* ===EXPERIENCE=== */
+#experience{padding:72px 48px;background:var(--bg);}
+.timeline{position:relative;padding-left:0;}
+.timeline::before{
+  content:'';position:absolute;left:27px;top:0;bottom:0;
+  width:1.5px;background:var(--border);
+}
+.tl-item{display:flex;gap:24px;margin-bottom:32px;}
+.tl-icon{
+  width:56px;height:56px;border-radius:50%;
+  border:2px solid var(--border);background:var(--surf);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;overflow:hidden;z-index:1;
+}
+.tl-icon img{width:32px;height:32px;object-fit:contain;}
+.tl-card{
+  background:var(--surf);border:1px solid var(--border);
+  border-radius:14px;padding:24px 28px;flex:1;
+  transition:border-color 0.2s;
+}
+.tl-card:hover{border-color:var(--ac);}
+.tl-card.highlight{border-left:3px solid var(--ac);}
+.tl-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;}
+.tl-company{font-size:15px;font-weight:600;}
+.tl-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);}
+.tl-role{font-size:13px;color:var(--ac);font-style:italic;margin-bottom:10px;}
+.tl-desc{font-size:13px;color:var(--ink2);line-height:1.7;}
+.new-badge{
+  background:var(--ac);color:#fff;font-size:9px;
+  padding:2px 8px;border-radius:4px;font-weight:700;
+  font-family:'DM Mono',monospace;margin-left:8px;vertical-align:middle;
+}
+.exp-toggle-wrap{display:flex;justify-content:center;margin-top:8px;margin-left:80px;}
+.exp-toggle{
+  border:1.5px solid var(--border);border-radius:30px;
+  padding:12px 32px;background:none;font-size:13px;cursor:pointer;
+  color:var(--ink2);font-family:'Outfit',sans-serif;
+  transition:border-color 0.2s,color 0.2s;
+}
+.exp-toggle:hover{border-color:var(--ac);color:var(--ac);}
+
+/* ===CONTACT=== */
+#contact{background:var(--surf);padding:72px 48px;}
+.contact-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.contact-card{
+  background:var(--surf);border:1px solid var(--border);
+  border-radius:14px;padding:24px 16px;text-align:center;cursor:pointer;
+  transition:transform 0.2s,border-color 0.2s;
+}
+.contact-card:hover{transform:translateY(-3px);border-color:var(--ac);}
+.contact-icon-box{
+  width:52px;height:52px;border-radius:12px;
+  margin:0 auto 12px;display:flex;align-items:center;justify-content:center;
+}
+.contact-icon-box img{width:28px;height:28px;object-fit:contain;}
+.contact-platform{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:6px;}
+.contact-value{font-size:12px;font-weight:600;color:var(--ink);word-break:break-all;}
+
+/* ===MODAL=== */
+.modal-overlay{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);
+  z-index:100;align-items:center;justify-content:center;
+}
+.modal-overlay.open{display:flex;}
+.modal-box{
+  background:var(--surf);border-radius:16px;padding:32px;
+  max-width:320px;width:90%;text-align:center;position:relative;
+}
+.modal-box img{width:100%;border-radius:8px;margin-top:12px;}
+.modal-close{
+  position:absolute;top:12px;right:16px;
+  background:none;border:none;font-size:22px;cursor:pointer;
+  color:var(--ink2);line-height:1;
+}
+.modal-title{font-family:'Lora',serif;font-size:16px;font-weight:600;}
+
+/* ===FOOTER=== */
+footer{
+  padding:40px 48px;
+  display:flex;justify-content:space-between;align-items:center;
+  background:var(--surf);border-top:1px solid var(--border);
+}
+.footer-left{font-family:'Lora',serif;font-size:22px;font-weight:600;line-height:1.3;}
+.footer-left span{font-style:italic;color:var(--ac);}
+.footer-right{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);}
+
+/* Responsive */
+@media(max-width:900px){
+  #hero{grid-template-columns:1fr;}
+  .hero-right{display:none;}
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  #about,.about-grid,#projects{padding:48px 20px;}
+  .about-grid{grid-template-columns:1fr;}
+  .about-stats{flex-direction:row;flex-wrap:wrap;}
+  .projects-grid{grid-template-columns:1fr;}
+  .thoughts-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:repeat(2,1fr);}
+  #thoughts,#experience,#contact,footer{padding:48px 20px;}
+  .hero-left{padding:48px 20px;}
+  #skills .skill-header{padding:9px 20px;}
+}
 </style>
 </head>
-<body class="light-theme">
+<body>
 
-<nav id="navbar">
-  <div class="logo">MC</div>
-  <div class="nav-links">
-    <a href="#about"><span class="zh">关于</span><span class="en" style="display:none;">About</span></a>
-    <a href="#skills"><span class="zh">技能</span><span class="en" style="display:none;">Skills</span></a>
-    <a href="#projects"><span class="zh">项目</span><span class="en" style="display:none;">Projects</span></a>
-    <a href="#insights"><span class="zh">洞察</span><span class="en" style="display:none;">Insights</span></a>
-    <a href="#experience"><span class="zh">经历</span><span class="en" style="display:none;">Experience</span></a>
-    <a href="#contact"><span class="zh">联系</span><span class="en" style="display:none;">Contact</span></a>
-  </div>
-  <div class="nav-controls">
-    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
-    <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">M<span>.</span>Chen</a>
+  <ul class="nav-links">
+    <li><a href="#about">关于</a></li>
+    <li><a href="#skills">技能</a></li>
+    <li><a href="#projects">项目</a></li>
+    <li><a href="#thoughts">思考</a></li>
+    <li><a href="#experience">经历</a></li>
+    <li><a href="#contact">联系</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-btn" onclick="document.body.classList.toggle('dark-mode');this.textContent=document.body.classList.contains('dark-mode')?'☀ 亮色':'☾ 暗色'">☾ 暗色</button>
+    <a href="#contact" class="contact-btn">联系我</a>
   </div>
 </nav>
 
-<section class="hero">
-  <div class="hero-container">
-    <div class="hero-content">
-      <h1><span class="gradient-text"><span class="zh">你好，我是</span><span class="en" style="display:none;">Hello, I'm</span></span></h1>
-      <h1 class="hero-title-main typewriter"><span class="zh">Michelle Chen 陈美晖</span><span class="en" style="display:none;">Michelle Chen</span></h1>
-      <p class="hero-subtitle"><span class="zh">售前解决方案工程师 | 技术咨询 | 技术开发</span><span class="en" style="display:none;">Pre-Sales & Cloud Solution Engineer</span></p>
-      <p class="hero-description">
-        <span class="zh">将技术转化为可衡量的商业价值。我在复杂技术方案与客户需求之间搭建桥梁，专注于前端开发、云架构、数据分析和解决方案设计。</span>
-        <span class="en" style="display:none;">Turning technology into measurable business value. I bridge the gap between complex technical solutions and client needs, specializing in cloud architecture, data analytics, and solution design.</span>
-      </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary"><span class="zh">查看项目 →</span><span class="en" style="display:none;">View Projects →</span></a>
-        <a href="#" class="btn btn-ghost"><span class="zh">📄 下载简历</span><span class="en" style="display:none;">📄 Download Resume</span></a>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-badge">百度智能云 · HPE · 西澳大学</div>
+    <h1 class="hero-title">
+      <span class="line1">Michelle</span>
+      <span class="line2">Chen</span>
+      <span class="line3">陈美晖</span>
+    </h1>
+    <p class="hero-sub">将复杂技术方案转化为可衡量的商业价值。深度参与百度智能云AI解决方案落地，以售前视角连接技术与业务。</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">4</span>
+        <span class="hero-stat-label">个核心项目</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">42s</span>
+        <span class="hero-stat-label">Agent优化</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">2+</span>
+        <span class="hero-stat-label">年经验</span>
       </div>
     </div>
-    <div class="hero-avatar">
-      <video id="heroVideo"
-             autoplay
-             loop
-             muted
-             playsinline
-             preload="none"
-             poster="images/hero_poster.jpg"
-             width="420" height="420">
-        <!-- 浏览器会优先用第一个能解码的来源 -->
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">查看项目 →</a>
+      <a href="#" class="btn-outline">下载简历</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-video-slot">
+      <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;border-radius:12px" poster="images/hero_poster.jpg">
         <source src="images/hero_avatar_720_clean.mp4" type="video/mp4">
         <source src="images/hero_avatar_720.webm" type="video/webm">
-        您的浏览器不支持视频播放。
       </video>
     </div>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="section-header">
-    <h2 class="section-title gradient-text"><span class="zh">关于我</span><span class="en" style="display:none;">About Me</span></h2>
-    <p class="section-subtitle"><span class="zh">技术与商业之间的翻译官</span><span class="en" style="display:none;">A translator between technology and business</span></p>
-  </div>
-  <div class="about-container">
-    <div class="about-image">
-      <img src="images/picture.JPG" alt="About">
-    </div>
-    <div class="about-main">
-        <div class="about-content glass-card">
-          <p class="about-text">
-            <span class="zh">我把自己定位为一名兼具商业思维与技术实践能力的复合型人才，拥有管理学士学位和世界前百强校西澳大学的信息技术硕士学位（均分Distinction）。我擅长扮演连接商业需求与技术实现的"桥梁"角色。在惠普（HPE）的解决方案顾问实习中，我将这种复合能力应用于实践，通过深度分析客户痛点，设计出可为金融客户降低超20%TCO的超融合解决方案。</span>
-            <span class="en" style="display:none;">I position myself as a hybrid talent with both business acumen and technical execution capabilities, holding a Bachelor's degree in Management and a Master's in Information Technology from UWA (top 100 globally, Distinction average). I excel at bridging business requirements and technical implementation. During my HPE solution consultant internship, I applied this hybrid capability by deeply analyzing client pain points and designing a hyperconverged solution that reduced TCO by over 20% for financial clients.</span>
-          </p>
-          <p class="about-text">
-            <span class="zh">我的实战能力源于从0到1独立负责的两个商业项目，在项目中我展现了强大的创新精神与自驱力。我曾通过优化服务流程将客户转化率提升30%以上，也曾利用API自动化将订单处理效率提升三倍以上，充分验证了我在数据驱动运营与技术问题解决上的综合能力。我相信，这种解决复杂问题的热情，结合流利的英语沟通能力，使我能够胜任任何需要深度理解业务并以技术驱动创新的挑战性岗位，为企业创造切实的商业价值。</span>
-            <span class="en" style="display:none;">My practical capabilities stem from independently leading two business projects from 0 to 1, where I demonstrated strong innovation and self-motivation. I've increased customer conversion rates by over 30% through service process optimization and boosted order processing efficiency by 3x through API automation, fully validating my comprehensive capabilities in data-driven operations and technical problem-solving. I believe this passion for solving complex problems, combined with fluent English communication skills, enables me to excel in any challenging role that requires deep business understanding and technology-driven innovation, creating tangible business value for enterprises.</span>
-          </p>
-          <div class="tabs">
-            <button class="tab active" onclick="handleTabClick(0)"><span class="zh">教育背景</span><span class="en" style="display:none;">Education</span></button>
-            <button class="tab" onclick="handleTabClick(1)"><span class="zh">证书认证</span><span class="en" style="display:none;">Certifications</span></button>
-          </div>
-          <div class="tab-content active" id="aboutTab0">
-            <div class="education-item">
-              <h4><span class="zh">信息技术硕士</span><span class="en" style="display:none;">Master of Information Technology</span></h4>
-              <span class="date">2024.07 - 2026.08 | <span class="zh">西澳大学</span><span class="en" style="display:none;">University of Western Australia</span></span>
-              <p><span class="zh">GPA: Distinction (6.0) - 前15% | 优秀奖学金 (10,000澳元)</span><span class="en" style="display:none;">GPA: Distinction (6.0) - Top 15% | Merit Scholarship (10,000 AUD)</span></p>
-              <p><span class="zh">核心课程：云计算、数据分析、机器学习、自然语言处理、敏捷Web开发、Linux工具与脚本</span><span class="en" style="display:none;">Core Courses: Cloud Computing, Data Analytics, Machine Learning, NLP, Agile Web Development, Linux Tools & Scripting</span></p>
-            </div>
-            <div class="education-item">
-              <h4><span class="zh">旅游管理学士</span><span class="en" style="display:none;">Bachelor of Tourism Management</span></h4>
-              <span class="date">2019.09 - 2023.06 | <span class="zh">福建师范大学</span><span class="en" style="display:none;">Fujian Normal University</span></span>
-              <p><span class="zh">核心课程：市场营销、统计学、项目管理 - 培养市场洞察、数据分析及项目落地能力</span><span class="en" style="display:none;">Core Courses: Marketing, Statistics, Project Management - Building market insight, data analysis, and project delivery capabilities</span></p>
-            </div>
-          </div>
-          <div class="tab-content" id="aboutTab1">
-            <div class="education-item"><h4>AWS Cloud Practitioner (<span class="zh">准备中</span><span class="en" style="display:none;">In Progress</span>)</h4><p><span class="zh">正在准备AWS CLF认证，强化云解决方案架构能力</span><span class="en" style="display:none;">Preparing for AWS CLF certification to strengthen cloud solution architecture capabilities</span></p></div>
-            <div class="education-item"><h4>PTE Academic - 74 (≈ <span class="zh">雅思</span><span class="en" style="display:none;">IELTS</span> 7.5)</h4><p><span class="zh">专业英语能力，多次全英文工作环境</span><span class="en" style="display:none;">Professional English proficiency, multiple full-English work environments</span></p></div>
-            <div class="education-item"><h4><span class="zh">英语六级 | 计算机等级证书 | 驾照</span><span class="en" style="display:none;">CET-6 | Computer Level 1 | Driver's License</span></h4></div>
-          </div>
-        </div>
-        <div class="stats">
-          <div class="stat-card glass-card"><div class="stat-number">2+</div><p class="stat-label"><span class="zh">年工作经验</span><span class="en" style="display:none;">Years Experience</span></p></div>
-          <div class="stat-card glass-card"><div class="stat-number">7+</div><p class="stat-label"><span class="zh">完成项目</span><span class="en" style="display:none;">Projects Completed</span></p></div>
-          <div class="stat-card glass-card"><div class="stat-number">10+</div><p class="stat-label"><span class="zh">获奖与证书</span><span class="en" style="display:none;">Awards & Certs</span></p></div>
-        </div>
+    <div class="hero-img-slot">
+      <img src="images/picture.JPG" style="width:100%;height:100%;object-fit:cover;border-radius:12px" alt="Michelle Chen">
     </div>
   </div>
 </section>
 
-<section class="skills" id="skills">
-  <div class="section-header">
-    <h2 class="section-title gradient-text"><span class="zh">技术能力</span><span class="en" style="display:none;">Technical Expertise</span></h2>
-    <p class="section-subtitle"><span class="zh">我常用的技术与工具</span><span class="en" style="display:none;">Tools and technologies I use</span></p>
-  </div>
-  <div class="skills-grid">
-    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/python_logo.svg" alt="Python"></div><div class="skill-name">Python</div><div class="skill-category"><span class="zh">编程</span><span class="en" style="display:none;">Programming</span></div></div>
-    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/java_logo.svg" alt="Java"></div><div class="skill-name">Java</div><div class="skill-category"><span class="zh">编程</span><span class="en" style="display:none;">Programming</span></div></div>
-    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/mysql_logo.svg" alt="SQL"></div><div class="skill-name">SQL</div><div class="skill-category"><span class="zh">数据库</span><span class="en" style="display:none;">Database</span></div></div>
-    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/tableau_logo.svg" alt="Tableau"></div><div class="skill-name">Tableau</div><div class="skill-category"><span class="zh">数据分析</span><span class="en" style="display:none;">Analytics</span></div></div>
-    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/excel_logo.svg" alt="Excel"></div><div class="skill-name">Excel</div><div class="skill-category"><span class="zh">数据分析</span><span class="en" style="display:none;">Analytics</span></div></div>
-    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/aws_logo.svg" alt="AWS"></div><div class="skill-name">AWS</div><div class="skill-category"><span class="zh">云服务</span><span class="en" style="display:none;">Cloud</span></div></div>
-    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/linux_logo.svg" alt="Linux"></div><div class="skill-name">Linux</div><div class="skill-category"><span class="zh">系统</span><span class="en" style="display:none;">System</span></div></div>
-    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/shell_logo.svg" alt="Shell"></div><div class="skill-name">Shell</div><div class="skill-category"><span class="zh">自动化</span><span class="en" style="display:none;">Automation</span></div></div>
-    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/IOT_logo.svg" alt="IoT"></div><div class="skill-name">IoT</div><div class="skill-category"><span class="zh">连接</span><span class="en" style="display:none;">Connectivity</span></div></div>
-    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/figma_logo.svg" alt="Figma"></div><div class="skill-name">Figma</div><div class="skill-category"><span class="zh">设计</span><span class="en" style="display:none;">Design</span></div></div>
-    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/sc_logo.svg" alt="Supply_Chain"></div><div class="skill-name"><span class="zh">供应链</span><span class="en" style="display:none;">Supply Chain</span></div><div class="skill-category"><span class="zh">领域</span><span class="en" style="display:none;">Domain</span></div></div>
-    <div class="skill-card glass-card"><div class="skill-icon"><img src="images/pre_logo.svg" alt="Supply_Chain"></div><div class="skill-name"><span class="zh">演示表达</span><span class="en" style="display:none;">Presentation</span></div><div class="skill-category"><span class="zh">软技能</span><span class="en" style="display:none;">Soft Skill</span></div></div>
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-tag">// 关于我 · About</p>
+  <h2 class="section-title">关于我</h2>
+  <p class="section-sub">技术与商业之间的翻译官</p>
+  <div class="about-grid">
+    <div>
+      <img src="images/picture.JPG" class="about-photo" alt="Michelle Chen">
+    </div>
+    <div class="about-mid">
+      <p class="about-text">我把自己定位为一名兼具商业思维与技术实践能力的复合型人才，拥有管理学士学位和世界前百强校西澳大学的信息技术硕士学位（均分Distinction）。我擅长扮演连接商业需求与技术实现的"桥梁"角色。在惠普（HPE）的解决方案顾问实习中，我将这种复合能力应用于实践，通过深度分析客户痛点，设计出可为金融客户降低超20%TCO的超融合解决方案。</p>
+      <p class="about-text">我的实战能力源于从0到1独立负责的两个商业项目，在项目中我展现了强大的创新精神与自驱力。我曾通过优化服务流程将客户转化率提升30%以上，也曾利用API自动化将订单处理效率提升三倍以上，充分验证了我在数据驱动运营与技术问题解决上的综合能力。我相信，这种解决复杂问题的热情，结合流利的英语沟通能力，使我能够胜任任何需要深度理解业务并以技术驱动创新的挑战性岗位，为企业创造切实的商业价值。</p>
+      <div class="tabs">
+        <button class="tab active" onclick="switchTab(0)">教育背景</button>
+        <button class="tab" onclick="switchTab(1)">证书认证</button>
+      </div>
+      <div class="tab-panel active" id="tab0">
+        <div class="edu-item">
+          <h4>信息技术硕士</h4>
+          <div class="edu-date">2024.07 — 2026.08 · 西澳大学（University of Western Australia）</div>
+          <p>GPA: Distinction 6.0 · 前15% · 优秀奖学金 10,000 AUD</p>
+          <p>核心课程：云计算、数据分析、机器学习、NLP、敏捷Web开发、Linux工具与脚本</p>
+        </div>
+        <div class="edu-item">
+          <h4>旅游管理学士</h4>
+          <div class="edu-date">2019.09 — 2023.06 · 福建师范大学</div>
+          <p>核心课程：市场营销、统计学、项目管理</p>
+        </div>
+      </div>
+      <div class="tab-panel" id="tab1">
+        <div class="edu-item">
+          <h4>AWS Cloud Practitioner（准备中）</h4>
+          <p>正在准备AWS CLF认证，强化云解决方案架构能力</p>
+        </div>
+        <div class="edu-item">
+          <h4>PTE Academic 74（≈ 雅思 7.5）</h4>
+          <p>专业英语能力，多次全英文工作环境</p>
+        </div>
+        <div class="edu-item">
+          <h4>英语六级 | 计算机等级证书 | 驾照</h4>
+        </div>
+      </div>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="stat-num">6.0</div>
+        <div class="stat-label">GPA Distinction</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">4</div>
+        <div class="stat-label">核心项目</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">获奖证书</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="projects" id="projects">
-  <div class="section-header">
-    <h2 class="section-title gradient-text"><span class="zh">项目展示</span><span class="en" style="display:none;">Featured Projects</span></h2>
-    <p class="section-subtitle"><span class="zh">把点子落地成可衡量的业务结果</span><span class="en" style="display:none;">Turning ideas into measurable business results</span></p>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="skill-header">// 技术栈 · Tech Stack</div>
+  <div class="marquee-wrap">
+    <div class="marquee-track" id="mq1">
+      <!-- set 1 -->
+      <div class="mq-item"><img src="images/python_logo.svg" alt="">Python</div>
+      <div class="mq-item"><img src="images/java_logo.svg" alt="">Java</div>
+      <div class="mq-item"><img src="images/mysql_logo.svg" alt="">SQL</div>
+      <div class="mq-item"><img src="images/linux_logo.svg" alt="">Linux</div>
+      <div class="mq-item"><img src="images/shell_logo.svg" alt="">Shell</div>
+      <div class="mq-item"><img src="images/aws_logo.svg" alt="">AWS</div>
+      <div class="mq-item"><img src="images/figma_logo.svg" alt="">Figma</div>
+      <div class="mq-item"><img src="images/excel_logo.svg" alt="">Excel</div>
+      <div class="mq-item"><img src="images/tableau_logo.svg" alt="">Tableau</div>
+      <div class="mq-item"><img src="images/IOT_logo.svg" alt="">IoT</div>
+      <div class="mq-item"><img src="images/sc_logo.svg" alt="">供应链</div>
+      <div class="mq-item"><img src="images/pre_logo.svg" alt="">演示表达</div>
+      <!-- set 2 (duplicate for seamless) -->
+      <div class="mq-item"><img src="images/python_logo.svg" alt="">Python</div>
+      <div class="mq-item"><img src="images/java_logo.svg" alt="">Java</div>
+      <div class="mq-item"><img src="images/mysql_logo.svg" alt="">SQL</div>
+      <div class="mq-item"><img src="images/linux_logo.svg" alt="">Linux</div>
+      <div class="mq-item"><img src="images/shell_logo.svg" alt="">Shell</div>
+      <div class="mq-item"><img src="images/aws_logo.svg" alt="">AWS</div>
+      <div class="mq-item"><img src="images/figma_logo.svg" alt="">Figma</div>
+      <div class="mq-item"><img src="images/excel_logo.svg" alt="">Excel</div>
+      <div class="mq-item"><img src="images/tableau_logo.svg" alt="">Tableau</div>
+      <div class="mq-item"><img src="images/IOT_logo.svg" alt="">IoT</div>
+      <div class="mq-item"><img src="images/sc_logo.svg" alt="">供应链</div>
+      <div class="mq-item"><img src="images/pre_logo.svg" alt="">演示表达</div>
+    </div>
   </div>
-  <div class="project-filters">
-    <button class="filter-btn active" data-filter="all"><span class="zh">全部</span><span class="en" style="display:none;">All</span></button>
-    <button class="filter-btn" data-filter="cloud"><span class="zh">云解决方案</span><span class="en" style="display:none;">Cloud Solutions</span></button>
-    <button class="filter-btn" data-filter="ecommerce"><span class="zh">电商解决方案</span><span class="en" style="display:none;">E-commerce</span></button>
+  <div class="skill-header" style="border-top:1px solid var(--border)">// AI 工具栈 · AI Tool Stack</div>
+  <div class="marquee-wrap">
+    <div class="marquee-track reverse" id="mq2">
+      <!-- set 1 -->
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#2B5EC7">百</div>百度千帆AppBuilder</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#3B7DE8">E</div>ERNIE系列</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#6B3FA0">V</div>Vidu视频大模型</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#1A6B8A">DS</div>DeepSeek</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#4A90A4">Q</div>Qwen</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#2D7A4A">R</div>RAG知识库</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#1F5C8A">云</div>百度智能云</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#00A651">H</div>HPE GreenLake</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#D97706">C</div>Claude</div>
+      <!-- set 2 (duplicate for seamless) -->
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#2B5EC7">百</div>百度千帆AppBuilder</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#3B7DE8">E</div>ERNIE系列</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#6B3FA0">V</div>Vidu视频大模型</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#1A6B8A">DS</div>DeepSeek</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#4A90A4">Q</div>Qwen</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#2D7A4A">R</div>RAG知识库</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#1F5C8A">云</div>百度智能云</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#00A651">H</div>HPE GreenLake</div>
+      <div class="mq-item ai-item"><div class="ai-icon" style="background:#D97706">C</div>Claude</div>
+    </div>
   </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-tag">// 项目展示</p>
+  <h2 class="section-title">项目展示</h2>
+  <p class="section-sub" style="margin-bottom:32px">把技术落地成可衡量的结果</p>
   <div class="projects-grid">
-    <div class="project-card glass-card" data-category="cloud">
-      <div class="project-image"><img src="images/Solutio_Architecture.png" alt="HPE dHCI Solution"></div>
-      <div class="project-content">
-        <h3 class="project-title"><span class="zh">HPE dHCI 金融行业解决方案</span><span class="en" style="display:none;">HPE dHCI Financial Solution</span></h3>
-        <div class="project-tags"><span class="tag"><span class="zh">云计算</span><span class="en" style="display:none;">Cloud</span></span><span class="tag"><span class="zh">售前</span><span class="en" style="display:none;">Pre-Sales</span></span><span class="tag"><span class="zh">TCO建模</span><span class="en" style="display:none;">TCO Modeling</span></span></div>
-        <p class="project-description"><span class="zh">为金融客户设计基于HPE GreenLake的混合云架构方案，通过需求分析、容量规划和TCO建模，论证该方案可降低20%运维成本并提升4倍性能，成功推动项目进入客户汇报阶段。</span><span class="en" style="display:none;">Designed HPE GreenLake-based hybrid cloud architecture for financial clients through requirement analysis, capacity planning, and TCO modeling. Demonstrated 20% cost reduction and 4x performance improvement, successfully advancing the project to client presentation stage.</span></p>
-        <div class="project-links"><a href="https://chemiui.github.io/dHCI-Financial-Solution-Project/" target="_blank" class="project-link"><span class="zh">查看项目演示 →</span><span class="en" style="display:none;">View Report →</span></a></div>
+
+    <!-- Card 1 -->
+    <div class="proj-card">
+      <div class="proj-img" style="background:var(--acl)">
+        <div class="browser-bar">
+          <div class="dot" style="background:#E8A8A8"></div>
+          <div class="dot" style="background:#E8D8A8"></div>
+          <div class="dot" style="background:#A8D8A8"></div>
+        </div>
+        <div class="proj-emoji">✈️</div>
+        <div class="proj-label" style="font-family:'DM Mono',monospace">pre-flight-agent</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="ptag ptag-blue">AI Agent</span>
+          <span class="ptag ptag-blue">AppBuilder</span>
+          <span class="ptag ptag-purple">独立研发</span>
+        </div>
+        <h3 class="proj-title">Pre-Flight AI 智能助手</h3>
+        <p class="proj-desc">独立在百度千帆AppBuilder研发飞行前检查AI助手，设计三级合规拦截机制，大幅压缩端到端响应时间，提升安全检查效率与用户体验。</p>
+        <div class="proj-metric">⚡ 响应时间 70s → 42.3s（-40%）</div>
+        <a href="https://chemiui.github.io/dHCI-Financial-Solution-Project/" target="_blank" class="proj-link">查看项目 →</a>
       </div>
     </div>
-    <div class="project-card glass-card" data-category="ecommerce">
-      <div class="project-image"><img src="images/Digital_line.png" alt="BaLing Digital"></div>
-      <div class="project-content">
-        <h3 class="project-title"><span class="zh">岭北数码｜智能零售与指标化运营</span><span class="en" style="display:none;">BaLing Digital - Smart Retail & KPI Operations</span></h3>
-        <div class="project-tags"><span class="tag"><span class="zh">电商</span><span class="en" style="display:none;">E-commerce</span></span><span class="tag"><span class="zh">用户运营</span><span class="en" style="display:none;">CRM</span></span><span class="tag"><span class="zh">数据分析</span><span class="en" style="display:none;">Analytics</span></span></div>
-        <p class="project-description"><span class="zh">从零搭建二手数码电商项目，通过信任解决方案设计（认证+SLA售后）和数据驱动运营（A/B测试、私域社群），实现转化率提升30%、复购率30%，月GMV破万元。</span><span class="en" style="display:none;">Built a second-hand digital retail project from scratch. Through trust solution design and data-driven operations, achieved 30% conversion rate increase, 30% repeat purchase rate, and monthly GMV exceeding 10,000.</span></p>
-        <div class="project-links"><a href="https://chemiui.github.io/Northridge_Digital/" target="_blank" class="project-link"><span class="zh">查看方案详情 →</span><span class="en" style="display:none;">View Details →</span></a></div>
+
+    <!-- Card 2 -->
+    <div class="proj-card">
+      <div class="proj-img" style="background:var(--peach)">
+        <div class="browser-bar">
+          <div class="dot" style="background:#E8A8A8"></div>
+          <div class="dot" style="background:#E8D8A8"></div>
+          <div class="dot" style="background:#A8D8A8"></div>
+        </div>
+        <div class="proj-emoji">🤖</div>
+        <div class="proj-label" style="font-family:'DM Mono',monospace">ai-elderly-companion</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="ptag ptag-peach">AI硬件</span>
+          <span class="ptag ptag-blue">端云架构</span>
+          <span class="ptag ptag-peach">售前</span>
+        </div>
+        <h3 class="proj-title">AI老年陪伴端云方案</h3>
+        <p class="proj-desc">为某AI硬件厂商设计基于百度智能云的端云一体方案，参与客户需求调研与技术选型演示，协助推进商机进展，降低端侧响应延迟。</p>
+        <div class="proj-metric">⚡ 端侧响应 3s → 1.3s</div>
+        <a href="#" class="proj-link">查看详情 →</a>
       </div>
     </div>
-    <div class="project-card glass-card" data-category="ecommerce">
-      <div class="project-image"><img src="images/API.png" alt="E-commerce Automation"></div>
-      <div class="project-content">
-        <h3 class="project-title"><span class="zh">电商交付自动化｜Serverless 流水线</span><span class="en" style="display:none;">E-commerce Fulfillment Automation</span></h3>
-        <div class="project-tags"><span class="tag"><span class="zh">自动化</span><span class="en" style="display:none;">Automation</span></span><span class="tag"><span class="zh">API集成</span><span class="en" style="display:none;">API</span></span><span class="tag"><span class="zh">增长</span><span class="en" style="display:none;">Growth</span></span></div>
-        <p class="project-description"><span class="zh">设计并实施基于云存储API的自动化订单交付系统，将人工发货改造为"下单即交付"的无服务器流水线，订单处理效率提升300%，实现秒级响应和月营收2000+元。</span><span class="en" style="display:none;">Designed and implemented cloud storage API-based automated order fulfillment system. Achieved 300% efficiency improvement with second-level response and monthly revenue exceeding 2,000.</span></p>
-        <div class="project-links"><a href="#" class="project-link"><span class="zh">查看技术说明 →</span><span class="en" style="display:none;">Tech Notes →</span></a></div>
+
+    <!-- Card 3 -->
+    <div class="proj-card">
+      <div class="proj-img" style="background:var(--lav)">
+        <div class="browser-bar">
+          <div class="dot" style="background:#E8A8A8"></div>
+          <div class="dot" style="background:#E8D8A8"></div>
+          <div class="dot" style="background:#A8D8A8"></div>
+        </div>
+        <div class="proj-emoji">🎬</div>
+        <div class="proj-label" style="font-family:'DM Mono',monospace">aigc-isv-channel</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="ptag ptag-purple">AIGC</span>
+          <span class="ptag ptag-purple">ISV渠道</span>
+          <span class="ptag ptag-blue">视频大模型</span>
+        </div>
+        <h3 class="proj-title">AI漫剧ISV渠道合作方案</h3>
+        <p class="proj-desc">推进某AI漫剧平台ISV渠道合作，梳理百度AIGC视频解决方案，现场解答IAM主子账号权限隔离核心顾虑，推动合作意向落地。</p>
+        <div class="proj-metric">🔑 IAM主子账号架构（现场突破客户核心否决条件）</div>
+        <a href="#" class="proj-link">查看详情 →</a>
       </div>
     </div>
+
+    <!-- Card 4 -->
+    <div class="proj-card">
+      <div class="proj-img" style="background:var(--bg3)">
+        <div class="browser-bar">
+          <div class="dot" style="background:#E8A8A8"></div>
+          <div class="dot" style="background:#E8D8A8"></div>
+          <div class="dot" style="background:#A8D8A8"></div>
+        </div>
+        <div class="proj-emoji">🏦</div>
+        <img src="images/Solutio_Architecture.png" style="width:80%;opacity:0.3;position:absolute;bottom:0" alt="">
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="ptag ptag-blue">云计算</span>
+          <span class="ptag ptag-peach">TCO建模</span>
+          <span class="ptag ptag-purple">dHCI架构</span>
+        </div>
+        <h3 class="proj-title">HPE dHCI 金融行业解决方案</h3>
+        <p class="proj-desc">为模拟金融客户设计HPE GreenLake混合云方案，发现存储/计算非对称增长锚点，以客户自身数据驳斥竞争假设，完成TCO价值论证。</p>
+        <div class="proj-metric">📉 -20% TCO · 性能提升 4×</div>
+        <a href="https://chemiui.github.io/dHCI-Financial-Solution-Project/" target="_blank" class="proj-link">查看项目 →</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section class="insights" id="insights">
-  <div class="section-header">
-    <h2 class="section-title gradient-text"><span class="zh">行业洞察</span><span class="en" style="display:none;">Industry Insights</span></h2>
-    <p class="section-subtitle"><span class="zh">展示我的思考路径：观察 → 验证 → 结论</span><span class="en" style="display:none;">My reasoning pattern: Observation → Validation → Conclusion</span></p>
-  </div>
-  <div class="insights-grid">
-    <div class="insight-card glass-card">
-        <h3 class="insight-title"><span class="zh">智能物流：指标优先而非"功能堆叠"</span><span class="en" style="display:none;">Smart Logistics: KPIs over Feature Stacking</span></h3>
-        <p class="insight-subtitle"><span class="zh">我的观察 → 验证思路 → 结论</span><span class="en" style="display:none;">Observation → Validation → Conclusion</span></p>
-        <p class="insight-text">
-            <span class="zh">观察：项目容易困留在"功能上云"，但业务更关心拣收时效、周转率与错拣率。
-验证：先在样本仓做 A/B，只改 1-2 个环节，跟踪 Dwell time 与出库时延。
-结论：以单指标突破的"窄切口方案"更易复制，售前话术也更聚焦。</span>
-            <span class="en" style="display:none;">Observation: Projects often get stuck on "cloudifying features" rather than moving business KPIs.
-Validation: A/B test in pilot warehouse; tweak 1-2 steps; track dwell time & shipping latency.
-Conclusion: Narrow KPI-first approaches scale better and sharpen the presales narrative.</span>
-        </p>
-        <a href="#" class="insight-link"><span class="zh">查看分析报告 →</span><span class="en" style="display:none;">View Report →</span></a>
+<!-- THOUGHTS -->
+<section id="thoughts">
+  <p class="section-tag">// 我的想法</p>
+  <h2 class="section-title">创造，打破常规，<br>并在过程中摸索。</h2>
+  <p class="section-sub" style="margin-bottom:32px">一个记录商业与科技交叉领域思想和实验的档案库</p>
+  <div class="thoughts-grid">
+
+    <div class="thought-card">
+      <div class="thought-cover" style="background:var(--acl)">
+        🤔
+        <span class="thought-cat" style="background:var(--acl);color:var(--act)">AI售前</span>
+      </div>
+      <div class="thought-body">
+        <div class="thought-time">阅读时间：5分钟 · 2026/02</div>
+        <h3 class="thought-title">产品能力≠客户价值：AI售前的那些否决条件</h3>
+        <p class="thought-sum">ISV最关心的不是模型参数，而是账号权限隔离和计费透明度。技术演示前先搞清楚客户的否决条件，比讲亮点更重要。</p>
+        <a href="#" class="thought-read">阅读全文 →</a>
+      </div>
     </div>
-    <div class="insight-card glass-card">
-        <h3 class="insight-title"><span class="zh">供应链数字化：先打通数据，再谈算法</span><span class="en" style="display:none;">Supply Chain Digitization: Data First, Then Algorithms</span></h3>
-        <p class="insight-subtitle"><span class="zh">踩坑 → 可行路径 → 价值衡量</span><span class="en" style="display:none;">Pitfalls → Path → Measurement</span></p>
-        <p class="insight-text">
-            <span class="zh">坑：脏数据与口径不一让模型失真。
-路径：主数据治理 + 事件总线，再上预测与补货策略。
-衡量：看毛利贡献/持有成本/缺货损失的综合 ROI，而不是只看准确率。</span>
-            <span class="en" style="display:none;">Pitfalls: Dirty data and inconsistent metrics break models.
-Path: Master data governance + event bus → forecasting & replenishment.
-Measurement: ROI via margin contribution / holding cost / OOS loss, not accuracy alone.</span>
-        </p>
-        <a href="#" class="insight-link"><span class="zh">查看分析报告 →</span><span class="en" style="display:none;">View Report →</span></a>
+
+    <div class="thought-card">
+      <div class="thought-cover" style="background:var(--peach)">
+        📦
+        <span class="thought-cat" style="background:var(--peach);color:var(--pt)">智能物流</span>
+      </div>
+      <div class="thought-body">
+        <div class="thought-time">阅读时间：6分钟 · 2026/01</div>
+        <h3 class="thought-title">指标优先而非"功能堆叠"：窄切口方案更易复制</h3>
+        <p class="thought-sum">项目容易困留在"功能上云"，但业务更关心拣收时效、周转率与错拣率。以单指标突破的窄切口方案更易复制，售前话术也更聚焦。</p>
+        <a href="#" class="thought-read">阅读全文 →</a>
+      </div>
     </div>
-    <div class="insight-card glass-card">
-        <h3 class="insight-title"><span class="zh">云原生成本：业务峰谷 ≠ 技术弹性</span><span class="en" style="display:none;">Cloud-Native Cost: Business Peaks ≠ Tech Elasticity</span></h3>
-        <p class="insight-subtitle"><span class="zh">假设 → 实验 → 决策</span><span class="en" style="display:none;">Hypothesis → Experiment → Decision</span></p>
-        <p class="insight-text">
-            <span class="zh">假设：Serverless 一定更省？
-实验：三类负载模拟（稳定/突发/批处理），纳入冷启动、出网费与阶梯价。
-决策：稳定流量用容器+预留；突发用 Serverless；批处理走 Spot 混部——组合拳更稳。</span>
-            <span class="en" style="display:none;">Hypothesis: Is Serverless always cheaper?
-Experiment: Simulate stable/burst/batch workloads; factor in cold start, egress, tiered pricing.
-Decision: Containers+reserved for stable, serverless for bursts, spot mix for batch—portfolio wins.</span>
-        </p>
-        <a href="#" class="insight-link"><span class="zh">查看分析报告 →</span><span class="en" style="display:none;">View Report →</span></a>
+
+    <div class="thought-card">
+      <div class="thought-cover" style="background:var(--lav)">
+        ☁️
+        <span class="thought-cat" style="background:var(--lav);color:var(--lt)">云原生成本</span>
+      </div>
+      <div class="thought-body">
+        <div class="thought-time">阅读时间：5分钟 · 2025/12</div>
+        <h3 class="thought-title">业务峰谷≠技术弹性：Serverless真的更省吗？</h3>
+        <p class="thought-sum">三类负载模拟后的结论：稳定流量用容器+预留；突发用Serverless；批处理走Spot混部——组合拳才稳。</p>
+        <a href="#" class="thought-read">阅读全文 →</a>
+      </div>
     </div>
+
   </div>
 </section>
 
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-tag">// 经历</p>
+  <h2 class="section-title">工作经历</h2>
+  <p class="section-sub" style="margin-bottom:40px">专业实践与成长轨迹</p>
+  <div class="timeline">
 
-<section class="experience" id="experience">
-    <div class="section-header">
-      <h2 class="section-title gradient-text"><span class="zh">工作经历</span><span class="en" style="display:none;">Professional Experience</span></h2>
-      <p class="section-subtitle"><span class="zh">专业实践与成长轨迹</span><span class="en" style="display:none;">Career journey and growth</span></p>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-icon"><img src="images/hpe-labs-svgrepo-com.svg" alt="HPE"></div>
-        <div class="timeline-card glass-card">
-          <div class="timeline-header">
-            <h3 class="timeline-company"><span class="zh">Hewlett Packard Enterprise (HPE)</span><span class="en" style="display:none;">Hewlett Packard Enterprise (HPE)</span></h3>
-            <p class="timeline-role"><span class="zh">解决方案顾问实习生</span><span class="en" style="display:none;">Solution Consultant Intern</span></p>
-            <p class="timeline-date">2025.09 - <span class="zh">至今</span><span class="en" style="display:none;">Present</span></p>
-          </div>
-          <div class="timeline-content">
-            <span class="zh">在校企合作项目中，为模拟金融客户设计混合云转型方案。完整经历了从客户发现、需求分析到方案设计与TCO价值论证的售前闭环。运用HPE专业工具进行容量规划，论证了方案在成本与性能上的显著优势。</span>
-            <span class="en" style="display:none;">In a university-enterprise program, designed a hybrid cloud transformation solution for a simulated financial client. Experienced the full pre-sales cycle from discovery and requirement analysis to solution design and TCO value proposition. Used HPE's professional tools for capacity planning, demonstrating significant cost and performance advantages.</span>
-          </div>
-        </div>
+    <!-- 1. 百度 -->
+    <div class="tl-item" id="exp1">
+      <div class="tl-icon" style="border-color:var(--ac);background:var(--acl)">
+        <span style="font-size:16px;font-weight:700;color:var(--act)">百</span>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-icon"><img src="images/UWA_logo.svg" alt="UWA"></div>
-        <div class="timeline-card glass-card">
-          <div class="timeline-header">
-            <h3 class="timeline-company"><span class="zh">西澳大学IT支持部门</span><span class="en" style="display:none;">University of Western Australia IT Support</span></h3>
-            <p class="timeline-role"><span class="zh">技术协作成员</span><span class="en" style="display:none;">Technical Collaborator</span></p>
-            <p class="timeline-date">2025.07 - <span class="zh">至今</span><span class="en" style="display:none;">Present</span></p>
-          </div>
-          <div class="timeline-content">
-            <span class="zh">负责记录团队会议纪要、为代码添加中文注释、撰写系统功能README文档，确保项目信息在各部门间的有效传递。参与前端界面简单修改，通过AI辅助完成代码编写并负责测试与用户反馈调整。这些工作让我认识到自己更擅长将技术概念清晰表达和跨部门沟通协调。</span>
-            <span class="en" style="display:none;">Responsible for meeting minutes, adding Chinese annotations to code, and writing README documentation to ensure effective information flow across departments. Participated in simple frontend modifications, completed coding with AI assistance and handled testing and user feedback. These experiences helped me realize my strength in clear technical communication and cross-department coordination.</span>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-icon"><img src="https://cdn.simpleicons.org/honda/8B5CF6" alt="Honda"></div>
-        <div class="timeline-card glass-card">
-          <div class="timeline-header">
-            <h3 class="timeline-company"><span class="zh">本田汽车 Honda North</span><span class="en" style="display:none;">Honda North</span></h3>
-            <p class="timeline-role"><span class="zh">线上营销顾问（兼职）</span><span class="en" style="display:none;">Online Marketing Consultant (Part-time)</span></p>
-            <p class="timeline-date">2025.03 - <span class="zh">至今</span><span class="en" style="display:none;">Present</span></p>
-          </div>
-          <div class="timeline-content">
-            <span class="zh">通过社交媒体与潜在客户沟通，深度挖掘购车与保养需求，成功引导10+位客户至线下成交。在全英文环境中协调客户与经销商需求，提供专业的双语客户服务。这段经历强化了我的客户需求分析与跨文化沟通能力。</span>
-            <span class="en" style="display:none;">Communicated with potential customers via social media, deeply explored purchase and maintenance needs, successfully guided 10+ clients to offline transactions. Coordinated customer and dealer needs in full-English environment. This experience strengthened my customer needs analysis and cross-cultural communication skills.</span>
-          </div>
-        </div>
-      </div>
-      <div class="hidden-experience" id="moreExperience">
-        <div class="timeline-item">
-            <div class="timeline-icon"><img src="images/coffee_logo.svg" alt="The Coffee Club"></div>
-            <div class="timeline-card glass-card">
-                <div class="timeline-header">
-                  <h3 class="timeline-company"><span class="zh">The Coffee Club Australia</span><span class="en" style="display:none;">The Coffee Club Australia</span></h3>
-                  <p class="timeline-role"><span class="zh">门店运营（All-rounder）</span><span class="en" style="display:none;">Store Operations (All-rounder)</span></p>
-                  <p class="timeline-date">2024.09 - <span class="zh">至今</span><span class="en" style="display:none;">Present</span></p>
-                </div>
-                <div class="timeline-content">
-                  <span class="zh">负责前台收银、咖啡制作、店面清洁等多项工作的灵活切换，在多元文化环境中与不同国家背景的同事密切协作。通过全英文沟通协调日常工作流程，快速适应澳洲本土服务标准。培养了快节奏环境下的多任务处理能力和跨文化沟通技巧。</span>
-                  <span class="en" style="display:none;">Flexibly switched between cashier, coffee making, and cleaning duties. Collaborated closely with colleagues from diverse backgrounds in a multicultural environment. Coordinated daily workflows in full English and quickly adapted to Australian service standards. Developed multitasking abilities and cross-cultural communication skills in a fast-paced environment.</span>
-                </div>
+      <div class="tl-card highlight">
+        <div class="tl-header">
+          <div>
+            <div class="tl-company">
+              百度智能云
+              <span class="new-badge">NEW</span>
             </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-icon"><img src="images/tourism_logo.svg" alt="Tourism"></div>
-          <div class="timeline-card glass-card">
-              <div class="timeline-header">
-                <h3 class="timeline-company"><span class="zh">福建海外实业旅游有限公司</span><span class="en" style="display:none;">Fujian Overseas Industrial Travel Co.</span></h3>
-                <p class="timeline-role"><span class="zh">业务运营实习生</span><span class="en" style="display:none;">Business Operations Intern</span></p>
-                <p class="timeline-date">2023.02 - 2023.08</p>
-              </div>
-              <div class="timeline-content">
-                <span class="zh">通过电话、线上咨询等方式与潜在客户一对一沟通，深入了解客户旅行偏好、预算范围和行程需求，推荐合适的旅游产品。维护客户关系，跟进决策进度，通过专业介绍和耐心服务提升客户购买意愿。协助团队进行新产品推广，通过客户反馈收集市场信息为产品优化提供参考。</span>
-                <span class="en" style="display:none;">Communicated one-on-one with potential customers via phone and online consultation, deeply understood travel preferences, budget ranges, and itinerary needs. Maintained customer relationships, followed up on decision progress, and enhanced purchase intention through professional introduction and patient service. Assisted team in new product promotion and collected market information through customer feedback.</span>
-              </div>
+            <div class="tl-role">解决方案工程师实习生 · 通用解决方案部</div>
           </div>
+          <div class="tl-date">2025.10 — 2026.02</div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-icon"><img src="images/government_logo.svg" alt="government"></div>
-          <div class="timeline-card glass-card">
-              <div class="timeline-header">
-                <h3 class="timeline-company"><span class="zh">福州市文化和旅游局</span><span class="en" style="display:none;">Fuzhou Culture & Tourism Bureau</span></h3>
-                <p class="timeline-role"><span class="zh">旅游资源调查员</span><span class="en" style="display:none;">Tourism Resources Researcher</span></p>
-                <p class="timeline-date">2022.06 - 2022.09</p>
-              </div>
-              <div class="timeline-content">
-                <span class="zh">对福州市及周边重点旅游景点进行系统性实地调研，通过标准化表格进行GPS定位、基础设施评估、文化价值打分等数据采集工作。主动提出使用数字化工具（微信小程序）进行数据收集，显著提升工作效率。运用Excel进行深度数据分析，撰写多份调研报告，为福州市旅游发展规划提供决策参考。</span>
-                <span class="en" style="display:none;">Conducted systematic on-site research on key tourist attractions in Fuzhou and surrounding areas. Performed data collection including GPS positioning, infrastructure assessment, and cultural value scoring through standardized forms. Proactively proposed using digital tools (WeChat mini-program) for data collection, significantly improving efficiency. Conducted in-depth data analysis with Excel and wrote multiple research reports providing decision-making references for Fuzhou tourism development planning.</span>
-              </div>
-          </div>
-        </div>
-      </div>
-      <div class="more-experience">
-        <button class="expand-btn" onclick="toggleExperience()">
-          <span class="zh" id="expandText">展开更多经历 ↓</span>
-          <span class="en" id="expandTextEn" style="display:none;">Show More Experience ↓</span>
-        </button>
-      </div>
-    </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="section-header">
-    <h2 class="section-title gradient-text">
-      <span class="zh">让我们合作</span><span class="en" style="display:none;">Let's Collaborate</span>
-    </h2>
-    <p class="section-subtitle">
-      <span class="zh">期待把技术变成可靠的业务价值</span>
-      <span class="en" style="display:none;">Let's turn technology into reliable business value</span>
-    </p>
-  </div>
-
-  <div class="contact-container glass-card">
-    <div class="contact-info">
-      <h2 class="gradient-text">
-        <span class="zh">取得联系</span><span class="en" style="display:none;">Get In Touch</span>
-      </h2>
-      <p>
-        <span class="zh">我目前正在寻找新的机会，邮箱始终开放。无论您有问题还是只是想打个招呼，我都会尽力回复！</span>
-        <span class="en" style="display:none;">I'm currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</span>
-      </p>
-
-      <!-- 社交按钮 -->
-      <div class="contact-social">
-        <!-- GitHub -->
-        <a class="contact-icon" href="https://github.com/CheMiui" target="_blank" rel="noopener" title="GitHub">
-          <img class="icon" src="images/github_logo.svg" alt="GitHub">
-        </a>
-        <!-- LinkedIn -->
-        <a class="contact-icon" href="https://www.linkedin.com/in/michelle-chen-10921b385/" target="_blank" rel="noopener" title="LinkedIn">
-          <img class="icon" src="images/linkedin_logo.svg" alt="LinkedIn">
-        </a>
-        <!-- Email -->
-        <button class="contact-icon"
-                type="button"
-                data-modal="email"
-                aria-label="Email" title="Email">
-          <img class="icon" src="images/email_logo.svg" alt="Email">
-        </button>
-        <!-- WeChat（弹窗二维码） -->
-        <button class="contact-icon"
-                type="button"
-                data-modal="qr"
-                data-title="微信 WeChat"
-                data-id="cmh8993"
-                data-img="images/wechat_QR.jpg"
-                aria-label="WeChat" title="WeChat">
-          <img class="icon" src="images/wechat_logo.svg" alt="WeChat">
-        </button>
-        
-        <!-- RED（弹窗二维码） -->
-        <a class="contact-icon"
-          href="https://www.xiaohongshu.com/user/profile/650db37a0000000016038a23"
-          target="_blank" rel="noopener" aria-label="RED" title="RED">
-          <img class="icon" src="images/Xiaohongshu_logo.svg" alt="RED">
-        </a>
+        <p class="tl-desc">独立参与AI硬件、AIGC视频ISV渠道、Pre-Flight Agent三条并行项目线，覆盖客户调研、方案设计、演示汇报、商机推进全流程售前闭环。核心成果：端侧延迟从3s优化至1.3s，Agent响应从70s优化至42.3s。</p>
       </div>
     </div>
 
-    <!-- 表单保持不变 -->
-    <form class="contact-form" onsubmit="return false;">
-      <div class="form-group"><label><span class="zh">您的姓名</span><span class="en" style="display:none;">Your Name</span></label><input type="text" placeholder="请输入您的姓名" required></div>
-      <div class="form-group"><label><span class="zh">邮箱地址</span><span class="en" style="display:none;">Email Address</span></label><input type="email" placeholder="请输入您的邮箱" required></div>
-      <div class="form-group"><label><span class="zh">主题</span><span class="en" style="display:none;">Subject</span></label><input type="text" placeholder="请输入主题" required></div>
-      <div class="form-group"><label><span class="zh">留言内容</span><span class="en" style="display:none;">Message</span></label><textarea placeholder="请输入您的留言..." required></textarea></div>
-      <button type="submit" class="submit-btn"><span class="zh">发送消息</span><span class="en" style="display:none;">Send Message</span></button>
-    </form>
-  </div>
+    <!-- 2. HPE -->
+    <div class="tl-item" id="exp2">
+      <div class="tl-icon" style="border-color:var(--ac)">
+        <img src="images/hpe-labs-svgrepo-com.svg" alt="HPE" onerror="this.parentNode.innerHTML='<span style=\'font-size:11px;font-weight:700;color:#2D7A2D\'>HPE</span>'">
+      </div>
+      <div class="tl-card highlight">
+        <div class="tl-header">
+          <div>
+            <div class="tl-company">Hewlett Packard Enterprise (HPE)</div>
+            <div class="tl-role">解决方案顾问实习生 · Forage项目</div>
+          </div>
+          <div class="tl-date">2025.09 — 至今</div>
+        </div>
+        <p class="tl-desc">为模拟金融客户设计dHCI混合云方案，完整售前闭环：客户发现→需求分析→容量规划→竞品分析→TCO论证→汇报演示。发现存储/计算非对称增长锚点，论证方案可降低20% TCO并提升4倍性能。</p>
+      </div>
+    </div>
 
+    <!-- 3. UWA -->
+    <div class="tl-item" id="exp3">
+      <div class="tl-icon">
+        <img src="images/UWA_logo.svg" alt="UWA" onerror="this.parentNode.innerHTML='<span style=\'font-size:11px;font-weight:700;color:var(--lt)\'>UWA</span>'">
+      </div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div>
+            <div class="tl-company">西澳大学 IT 支持部门</div>
+            <div class="tl-role">技术协作成员</div>
+          </div>
+          <div class="tl-date">2025.07 — 至今</div>
+        </div>
+        <p class="tl-desc">技术文档编写、跨部门沟通协调与前端界面协助修改。负责记录团队会议纪要、为代码添加中文注释、撰写系统功能README，确保项目信息在各部门间有效传递。</p>
+      </div>
+    </div>
+
+    <!-- 4. Honda (hidden) -->
+    <div class="tl-item" id="exp4" style="display:none">
+      <div class="tl-icon" style="background:#F5F5F5">
+        <span style="font-size:16px;font-weight:700;color:#888">H</span>
+      </div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div>
+            <div class="tl-company">本田汽车 Honda North</div>
+            <div class="tl-role">线上营销顾问（兼职）</div>
+          </div>
+          <div class="tl-date">2025.03 — 至今</div>
+        </div>
+        <p class="tl-desc">通过社交媒体与潜在客户沟通，深度挖掘购车与保养需求，成功引导10+位客户至线下成交。在全英文环境中协调客户与经销商需求，提供专业的双语客户服务。</p>
+      </div>
+    </div>
+
+    <!-- 5. Coffee Club (hidden) -->
+    <div class="tl-item" id="exp5" style="display:none">
+      <div class="tl-icon" style="background:#FFF3E8">
+        <img src="images/coffee_logo.svg" alt="Coffee Club" width="28" height="28" onerror="this.parentNode.innerHTML='<span style=\'font-size:11px;font-weight:700;color:#A06030\'>CC</span>'">
+      </div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div>
+            <div class="tl-company">The Coffee Club Australia</div>
+            <div class="tl-role">门店运营（All-rounder）</div>
+          </div>
+          <div class="tl-date">2024.09 — 至今</div>
+        </div>
+        <p class="tl-desc">负责前台收银、咖啡制作等多项工作灵活切换，在多元文化环境中与不同国家背景同事密切协作，培养快节奏多任务处理能力和跨文化沟通技巧。</p>
+      </div>
+    </div>
+
+    <!-- 6. 福建旅游 (hidden) -->
+    <div class="tl-item" id="exp6" style="display:none">
+      <div class="tl-icon" style="background:#E8F4EC">
+        <img src="images/tourism_logo.svg" alt="旅游" width="28" height="28" onerror="this.parentNode.innerHTML='<span style=\'font-size:14px;font-weight:700;color:#2D7A4A\'>旅</span>'">
+      </div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div>
+            <div class="tl-company">福建海外实业旅游有限公司</div>
+            <div class="tl-role">业务运营实习生</div>
+          </div>
+          <div class="tl-date">2023.02 — 2023.08</div>
+        </div>
+        <p class="tl-desc">一对一客户沟通，深入了解客户旅行偏好、预算范围和行程需求。维护客户关系，跟进决策进度，通过专业介绍和耐心服务提升客户购买意愿。</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="exp-toggle-wrap">
+    <button class="exp-toggle" id="expBtn" onclick="toggleExp()">展开更多经历 ↓</button>
+  </div>
 </section>
 
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-tag">// 联系</p>
+  <h2 class="section-title">让我们合作</h2>
+  <p class="section-sub" style="margin-bottom:32px">目前正在寻找新的机会，欢迎随时联系</p>
+  <div class="contact-grid">
+
+    <div class="contact-card" onclick="window.open('mailto:cmh001116@163.com')">
+      <div class="contact-icon-box" style="background:#F0F4FF">
+        <img src="images/email_logo.svg" alt="Email">
+      </div>
+      <div class="contact-platform">邮件</div>
+      <div class="contact-value">cmh001116@163.com</div>
+    </div>
+
+    <div class="contact-card" onclick="window.open('https://www.linkedin.com/in/michelle-chen-10921b385/')">
+      <div class="contact-icon-box" style="background:#EBF5FF">
+        <img src="images/linkedin_logo.svg" alt="LinkedIn">
+      </div>
+      <div class="contact-platform">LinkedIn</div>
+      <div class="contact-value">Michelle Chen</div>
+    </div>
+
+    <div class="contact-card" onclick="window.open('https://github.com/CheMiui')">
+      <div class="contact-icon-box" style="background:#F5F5F5">
+        <img src="images/github_logo.svg" alt="GitHub">
+      </div>
+      <div class="contact-platform">GitHub</div>
+      <div class="contact-value">CheMiui</div>
+    </div>
+
+    <div class="contact-card" onclick="openWechat()">
+      <div class="contact-icon-box" style="background:#F0FFF4">
+        <img src="images/wechat_logo.svg" alt="WeChat">
+      </div>
+      <div class="contact-platform">微信</div>
+      <div class="contact-value">扫码添加</div>
+    </div>
+
+    <div class="contact-card" onclick="window.open('https://www.xiaohongshu.com/user/profile/650db37a0000000016038a23')">
+      <div class="contact-icon-box" style="background:#FFF0F0">
+        <img src="images/Xiaohongshu_logo.svg" alt="小红书">
+      </div>
+      <div class="contact-platform">小红书</div>
+      <div class="contact-value">@Michelle</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>© 2025 Michelle Chen. All rights reserved.</p>
+  <div class="footer-left">
+    Let's work<br><span>together.</span>
+  </div>
+  <div class="footer-right">© 2026 Michelle Chen · chemiui.github.io/portfolio_Michelle</div>
 </footer>
 
+<!-- WeChat Modal -->
+<div class="modal-overlay" id="wechatModal" onclick="closeWechat(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeWechat()">&times;</button>
+    <div class="modal-title">微信扫码添加</div>
+    <img src="images/wechat_QR.jpg" alt="WeChat QR Code">
+  </div>
+</div>
+
 <script>
-let currentTheme = 'light';
-function toggleTheme() {
-  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-  document.body.className = currentTheme + '-theme' + (currentLang === 'en' ? ' en-mode' : '');
-  const themeBtn = document.querySelector('.theme-toggle');
-  themeBtn.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+// Tab switching
+function switchTab(idx){
+  document.querySelectorAll('.tab').forEach((t,i)=>{
+    t.classList.toggle('active',i===idx);
+  });
+  document.querySelectorAll('.tab-panel').forEach((p,i)=>{
+    p.classList.toggle('active',i===idx);
+  });
 }
 
-let currentLang = 'zh';
-function toggleLanguage() {
-  currentLang = currentLang === 'zh' ? 'en' : 'zh';
-  const langBtn = document.querySelector('.lang-toggle');
-  langBtn.textContent = currentLang === 'zh' ? 'EN' : 'CN';
-  if (currentLang === 'en') { document.body.classList.add('en-mode'); } else { document.body.classList.remove('en-mode'); }
-  document.querySelectorAll('.zh').forEach(el => { el.style.display = currentLang === 'zh' ? '' : 'none'; });
-  document.querySelectorAll('.en').forEach(el => { el.style.display = currentLang === 'en' ? '' : 'none'; });
-  toggleExperience(true);
+// Experience toggle
+var expExpanded=false;
+function toggleExp(){
+  expExpanded=!expExpanded;
+  ['exp4','exp5','exp6'].forEach(function(id){
+    document.getElementById(id).style.display=expExpanded?'flex':'none';
+  });
+  document.getElementById('expBtn').textContent=expExpanded?'收起经历 ↑':'展开更多经历 ↓';
 }
 
-function handleTabClick(index) {
-  const tabs = document.querySelectorAll('.about-content .tab');
-  const contents = document.querySelectorAll('.about-content .tab-content');
-  tabs.forEach(tab => tab.classList.remove('active'));
-  contents.forEach(content => content.classList.remove('active'));
-  if (tabs[index]) tabs[index].classList.add('active');
-  if (contents[index]) contents[index].classList.add('active');
+// WeChat modal
+function openWechat(){
+  document.getElementById('wechatModal').classList.add('open');
 }
-
-function toggleExperience(keepState = false) {
-  const moreExp = document.getElementById('moreExperience');
-  const expandText = document.getElementById('expandText');
-  const expandTextEn = document.getElementById('expandTextEn');
-  let expand = !moreExp.classList.contains('expanded');
-  if(keepState) expand = !expand;
-
-  if (expand) {
-    moreExp.classList.add('expanded');
-    expandText.textContent = '收起经历 ↑';
-    expandTextEn.textContent = 'Show Less ↑';
-  } else {
-    moreExp.classList.remove('expanded');
-    expandText.textContent = '展开更多经历 ↓';
-    expandTextEn.textContent = 'Show More Experience ↓';
+function closeWechat(e){
+  if(!e||e.target===document.getElementById('wechatModal')||e.currentTarget.classList.contains('modal-close')){
+    document.getElementById('wechatModal').classList.remove('open');
   }
 }
-
-window.addEventListener('scroll', () => {
-  const navbar = document.getElementById('navbar');
-  if (window.scrollY > 50) { navbar.classList.add('scrolled'); } else { navbar.classList.remove('scrolled'); }
-});
-
-const filterBtns = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.getAttribute('data-filter');
-    projectCards.forEach(card => {
-      const category = card.getAttribute('data-category');
-      card.style.display = (filter === 'all' || category === filter) ? 'grid' : 'none';
-    });
-  });
-});
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-document.querySelectorAll('.section-header, .skill-card, .project-card, .timeline-item, .insight-card, .about-image, .about-main').forEach(el => {
-    observer.observe(el);
-});
-
-// Stagger delays per section for smoother animation
-document.querySelectorAll('.skills-grid .skill-card').forEach((card, index) => { card.style.transitionDelay = `${index * 0.05}s`; });
-document.querySelectorAll('.projects-grid .project-card').forEach((card, index) => { card.style.transitionDelay = `${index * 0.1}s`; });
-document.querySelectorAll('.insights-grid .insight-card').forEach((card, index) => { card.style.transitionDelay = `${index * 0.1}s`; });
-document.querySelectorAll('.timeline .timeline-item').forEach((card, index) => { card.style.transitionDelay = `${index * 0.1}s`; });
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { e.preventDefault(); const target = document.querySelector(this.getAttribute('href')); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } }); });
 </script>
-
-<div class="qr-modal" id="qrModal" aria-hidden="true">
-  <div class="qr-backdrop" data-close></div>
-  <div class="qr-card" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
-    <button class="qr-close" data-close aria-label="关闭">×</button>
-    <h3 id="qrTitle">二维码</h3>
-    <img id="qrImg" src="" alt="二维码" loading="lazy">
-    <p class="qr-id">
-      <span id="qrIdText">account-id</span>
-      <button class="qr-copy" id="qrCopyBtn" data-copy>复制</button>
-    </p>
-    <p class="qr-tip">手机端可长按二维码保存/识别</p>
-  </div>
-</div>
-
-<script>
-  (function(){
-    const modal  = document.getElementById('qrModal');
-    const title  = document.getElementById('qrTitle');
-    const img    = document.getElementById('qrImg');
-    const idText = document.getElementById('qrIdText');
-    const copyBtn= document.getElementById('qrCopyBtn');
-  
-    // 打开弹窗（事件代理：捕捉所有 data-modal="qr" 的按钮）
-    document.addEventListener('click', (e)=>{
-      const btn = e.target.closest('[data-modal="qr"]');
-      if(!btn) return;
-      title.textContent = btn.dataset.title || '二维码';
-      img.src  = btn.dataset.img || '';
-      img.alt  = (btn.dataset.title || '') + ' 二维码';
-      idText.textContent = btn.dataset.id || '';
-      modal.classList.add('show');
-      modal.setAttribute('aria-hidden','false');
-    });
-  
-    // 关闭：点遮罩或 ×，或按 ESC
-    modal?.addEventListener('click', (e)=>{
-      if(e.target.hasAttribute('data-close')){
-        modal.classList.remove('show');
-        modal.setAttribute('aria-hidden','true');
-      }
-    });
-    document.addEventListener('keydown', (e)=>{
-      if(e.key === 'Escape' && modal?.classList.contains('show')){
-        modal.classList.remove('show');
-        modal.setAttribute('aria-hidden','true');
-      }
-    });
-  
-    // 复制账号
-    copyBtn?.addEventListener('click', async ()=>{
-      const txt = (idText.textContent || '').trim();
-      if(!txt) return;
-      try{
-        await navigator.clipboard.writeText(txt);
-        copyBtn.textContent = '已复制';
-        copyBtn.classList.add('copied');
-        setTimeout(()=>{ copyBtn.textContent = '复制'; copyBtn.classList.remove('copied'); }, 1200);
-      }catch{
-        alert('复制失败，请手动选择复制');
-      }
-    });
-  })();
-  </script>  
-<!-- Email 选择弹窗 -->
-<div class="email-modal" id="emailModal" aria-hidden="true">
-  <div class="qr-backdrop" data-close></div>
-  <div class="qr-card email-card" role="dialog" aria-modal="true" aria-labelledby="emailTitle">
-    <button class="qr-close" data-close aria-label="关闭">×</button>
-    <h3 id="emailTitle">选择一个邮箱</h3>
-
-    <ul class="email-list">
-      <li class="email-item">
-        <!-- 点击邮箱文本 = 打开默认邮件客户端 -->
-        <a class="email-text" href="mailto:cmh001116@163.com">cmh001116@163.com</a>
-        <button class="email-copy" data-copy="cmh001116@163.com">复制</button>
-      </li>
-    
-      <li class="email-item">
-        <a class="email-text" href="mailto:cmh001116@outlook.com">cmh001116@outlook.com</a>
-        <button class="email-copy" data-copy="cmh001116@outlook.com">复制</button>
-      </li>
-    </ul>
-
-    <p class="qr-tip">可直接点击「写信」或复制邮箱地址，在你常用的邮件客户端里粘贴使用。</p>
-  </div>
-</div>
-<script>
-  (function(){
-    const emailModal = document.getElementById('emailModal');
-  
-    // 打开 Email 弹窗
-    document.addEventListener('click', (e)=>{
-      const btn = e.target.closest('[data-modal="email"]');
-      if(!btn) return;
-      emailModal.classList.add('show');
-      emailModal.setAttribute('aria-hidden','false');
-    });
-  
-    // 关闭（点遮罩/× 或 ESC）
-    emailModal?.addEventListener('click', (e)=>{
-      if(e.target.hasAttribute('data-close')){
-        emailModal.classList.remove('show');
-        emailModal.setAttribute('aria-hidden','true');
-      }
-    });
-    document.addEventListener('keydown', (e)=>{
-      if(e.key === 'Escape' && emailModal?.classList.contains('show')){
-        emailModal.classList.remove('show');
-        emailModal.setAttribute('aria-hidden','true');
-      }
-    });
-  
-    // 复制邮箱
-    emailModal?.addEventListener('click', async (e)=>{
-      const copyBtn = e.target.closest('.email-copy');
-      if(!copyBtn) return;
-      const text = copyBtn.getAttribute('data-copy') || '';
-      if(!text) return;
-      try{
-        await navigator.clipboard.writeText(text);
-        copyBtn.textContent = '已复制';
-        copyBtn.classList.add('copied');
-        setTimeout(()=>{ copyBtn.textContent = '复制'; copyBtn.classList.remove('copied'); }, 1200);
-      }catch{
-        alert('复制失败，请手动选择复制');
-      }
-    });
-  })();
-  </script>
-  
 </body>
 </html>
